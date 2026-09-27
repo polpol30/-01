@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موسوعة تي مارتيريا - عمالقة الإسكندرية والكنيسة القبطية</title>
+    <!-- خطوط جوجل الخط العربي الإحترافي Cairo & Tajawal -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-primary: #0b132b;
+            --bg-secondary: #1c2541;
+            --accent-gold: #d4af37;
+            --accent-gold-light: #f3e5ab;
+            --accent-red: #8b0000;
+            --text-light: #f4f1ea;
+            --text-muted: #a0aec0;
+            --glass-bg: rgba(28, 37, 65, 0.7);
+            --glass-border: rgba(212, 175, 55, 0.25);
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-light);
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(139, 0, 0, 0.1) 0%, transparent 40%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+
+        /* الهيدر والعنوان الرئيسي */
+        header {
+            text-align: center;
+            padding: 60px 20px 30px;
+            position: relative;
+        }
+
+        .header-title {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold), #b38728);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .header-subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-gold-light);
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .header-desc {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 25px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* زر الاختبار الرئيسي */
+        .quiz-launch-container {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .quiz-launch-btn {
+            background: linear-gradient(135deg, var(--accent-gold), #b38728);
+            color: #0b132b;
+            border: none;
+            padding: 16px 35px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .quiz-launch-btn:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.7);
+            background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
+        }
+
+        /* شريط البحث والفلاتر */
+        .search-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 18px 25px 18px 60px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            border: 2px solid var(--accent-gold);
+            background: rgba(11, 19, 43, 0.8);
+            color: #fff;
+            outline: none;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.35);
+            background: rgba(11, 19, 43, 0.95);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 25px;
+            font-size: 1.4rem;
+            color: var(--accent-gold);
+        }
+
+        /* فلاتر الأبواب */
+        .filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            max-width: 1100px;
+            margin: 20px auto 40px;
+            padding: 0 20px;
+        }
+
+        .filter-btn {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-light);
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--accent-gold);
+            color: #000;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* شبكة الكروت */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(12px);
+            box-shadow: var(--card-shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-badge {
+            align-self: flex-start;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--accent-gold-light);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .card-title {
+            font-size: 1.35rem;
+            color: #fff;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .card-subtitle {
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .card-snippet {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 15px;
+            font-size: 0.85rem;
+            color: var(--accent-gold-light);
+            font-weight: 600;
+        }
+
+        /* نافذة العرض التفصيلية ونوافذ الـ Modal العامة */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(5, 9, 20, 0.88);
+            backdrop-filter: blur(15px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            border: 2px solid var(--accent-gold);
+            border-radius: 24px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 25px; left: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: var(--accent-red);
+            transform: rotate(90deg);
+        }
+
+        .modal-header {
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .modal-chapter {
+            color: var(--accent-gold);
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .modal-title {
+            font-size: 2.2rem;
+            color: #fff;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .modal-section {
+            margin-bottom: 30px;
+        }
+
+        .modal-section-title {
+            font-size: 1.2rem;
+            color: var(--accent-gold-light);
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-right: 4px solid var(--accent-gold);
+            padding-right: 12px;
+        }
+
+        .modal-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            text-align: justify;
+            background: rgba(11, 19, 43, 0.4);
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(139, 0, 0, 0.15));
+            border-right: 5px solid var(--accent-gold);
+            padding: 20px 25px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--accent-gold-light);
+            margin-top: 20px;
+            line-height: 1.7;
+        }
+
+        /* تنسيقات كارت ونواذة الاختبار */
+        .quiz-progress-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 15px 0 25px;
+        }
+
+        .quiz-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light));
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+
+        .quiz-question-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-gold-light);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .quiz-option-btn {
+            background: rgba(11, 19, 43, 0.6);
+            border: 1px solid var(--glass-border);
+            color: #fff;
+            padding: 15px 20px;
+            border-radius: 15px;
+            text-align: right;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .quiz-option-btn:hover {
+            border-color: var(--accent-gold);
+            background: rgba(212, 175, 55, 0.15);
+            transform: translateX(-5px);
+        }
+
+        .quiz-option-btn.selected {
+            background: var(--accent-gold);
+            color: #0b132b;
+            font-weight: 800;
+            border-color: var(--accent-gold);
+        }
+
+        .quiz-nav-btns {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .quiz-btn-nav {
+            background: var(--glass-bg);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold-light);
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-btn-nav:hover:not(:disabled) {
+            background: var(--accent-gold);
+            color: #0b132b;
+        }
+
+        .quiz-btn-nav:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            border-color: var(--text-muted);
+        }
+
+        /* شاشة نتيجة الاختبار */
+        .result-box {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .result-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--accent-gold-light);
+            border: 1px solid var(--accent-gold);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .result-saint-name {
+            font-size: 2.2rem;
+            color: #fff;
+            font-weight: 900;
+            margin-bottom: 5px;
+            background: linear-gradient(135deg, #fff, var(--accent-gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .result-saint-title {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .result-desc-box {
+            background: rgba(11, 19, 43, 0.5);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: justify;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .result-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* تخصيص شريط التمرير */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-gold);
+            border-radius: 4px;
+        }
+
+        .no-results {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .header-title { font-size: 2.1rem; }
+            .modal-content { padding: 25px 20px; }
+            .modal-title { font-size: 1.6rem; }
+            .quiz-launch-btn { font-size: 1rem; padding: 14px 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-subtitle">بسم الله القوي</div>
+        <h1 class="header-title">موسوعة تي مارتيريا </h1>
+        <p class="header-desc">
+            "مَلْحَمَةُ السَّبْعَةِ والثَّلاثين عملاقاً في تاريخ الإسكندرية والكنيسة القبطية الأرثوذكسية" <br>
+            بحث الباحث: <strong>بولا سامي مختار فوزي</strong> - 01229288609
+        </p>
+
+        <!-- زر الانطلاق للاختبار التفاعلي -->
+        <div class="quiz-launch-container">
+            <button class="quiz-launch-btn" onclick="openQuizModal()">
+                <i class="fa-solid fa-crosshairs"></i>
+                اختبار: أنت شبه مين من القديسين             </button>
+        </div>
+    </header>
+
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="اكتب اسم القديس أو البطل للاطلاع على كامل بياناته...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </div>
+
+    <div class="filters">
+        <button class="filter-btn active" onclick="filterCategory('all')">جميع العمالقة (37)</button>
+        <button class="filter-btn" onclick="filterCategory('الباب الأول')">عمالقة اللاهوت والفكر</button>
+        <button class="filter-btn" onclick="filterCategory('الباب الثاني')">رواد النسك والرهبنة</button>
+        <button class="filter-btn" onclick="filterCategory('الباب الثالث')">شهداء وسفراء أوروبا</button>
+        <button class="filter-btn" onclick="filterCategory('الباب الرابع')">أابطال الصمود والهوية</button>
+        <button class="filter-btn" onclick="filterCategory('الباب الخامس')">أراخنة وقمم معاصرة</button>
+    </div>
+
+    <main class="grid-container" id="cardsGrid">
+        <!-- يتم إدراج البطاقات ديناميكياً بواسطة JavaScript -->
+    </main>
+
+    <!-- نافذة التفاصيل (Modal Window) -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-chapter" id="modalChapter"></div>
+                <h2 class="modal-title" id="modalTitle"></h2>
+            </div>
+            
+            <div class="modal-section">
+                <div class="modal-section-title"><i class="fa-solid fa-book-open"></i> نبذة تاريخية وسيرة ذاتية مركزة</div>
+                <div class="modal-text" id="modalBio"></div>
+            </div>
+
+            <div class="modal-section">
+                <div class="modal-section-title"><i class="fa-solid fa-cross"></i> صليب الجهاد (كيف حمل الصليب في حياته)</div>
+                <div class="modal-text" id="modalCross"></div>
+            </div>
+
+            <div class="modal-section">
+                <div class="modal-section-title"><i class="fa-solid fa-globe"></i> الصورة الحلوة للعالم (الصدى العالمي والتأثير الإنساني)</div>
+                <div class="modal-text" id="modalImpact"></div>
+            </div>
+
+            <div class="quote-box" id="modalQuote"></div>
+        </div>
+    </div>
+
+    <!-- نافذة الاختبار التفاعلي (Quiz Modal) -->
+    <div class="modal-overlay" id="quizModalOverlay">
+        <div class="modal-content" style="max-width: 700px;">
+            <button class="modal-close" onclick="closeQuizModal()"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div id="quizBody">
+                <div class="modal-header" style="border:none; padding-bottom: 0; margin-bottom: 10px;">
+                    <div class="modal-chapter"><i class="fa-solid fa-sparkles"></i> اكتشف شبيهاك الروحي</div>
+                    <h2 class="modal-title" style="font-size: 1.6rem;" id="quizProgressText">السؤال 1 من 12</h2>
+                </div>
+
+                <div class="quiz-progress-bar">
+                    <div class="quiz-progress-fill" id="quizProgressFill"></div>
+                </div>
+
+                <div class="quiz-question-title" id="quizQuestionTitle">جاري تحميل السؤال...</div>
+
+                <div class="quiz-options" id="quizOptionsContainer">
+                    <!-- خيارات الإجابة -->
+                </div>
+
+                <div class="quiz-nav-btns">
+                    <button class="quiz-btn-nav" id="quizPrevBtn" onclick="prevQuestion()" disabled><i class="fa-solid fa-chevron-right"></i> السابق</button>
+                    <button class="quiz-btn-nav" id="quizNextBtn" onclick="nextQuestion()" disabled>التالي <i class="fa-solid fa-chevron-left"></i></button>
+                </div>
+            </div>
+
+            <!-- عرض النتيجة -->
+            <div id="quizResultBody" style="display: none;">
+                <div class="result-box">
+                    <div class="result-badge"><i class="fa-solid fa-award"></i> النتيجة النهائية للتطابق الروحي</div>
+                    <h2 class="result-saint-name" id="resSaintName">...</h2>
+                    <div class="result-saint-title" id="resSaintTitle">...</div>
+
+                    <div class="result-desc-box" id="resSaintDesc">
+                        ...
+                    </div>
+
+                    <div class="result-actions">
+                        <button class="quiz-launch-btn" style="font-size: 0.95rem; padding: 12px 25px;" id="resViewBioBtn">
+                            <i class="fa-solid fa-book-open"></i> قراءة السيرة الكاملة
+                        </button>
+                        <button class="quiz-btn-nav" style="padding: 12px 25px;" onclick="resetQuiz()">
+                            <i class="fa-solid fa-rotate-right"></i> إعادة الاختبار
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // قاعدة البيانات الكاملة للـ 37 شخصية مع أبعاد التقييم [wisdom, asceticism, courage, service]
+        const saintsData = [
+            // الباب الأول
+            {
+                id: 1,
+                name: "القديس مرقس الرسول",
+                title: "كاروز الديار المصرية وأول بطاركة الإسكندرية",
+                chapter: "الباب الأول - عمالقة اللاهوت والفكر والحساب الفلكي بالإسكندرية",
+                bio: "هو يوحنا الملقب مرقس أحد السبعين رسولاً، وكاتب الإنجيل الثاني الذي يحمل اسمه. ولد في مدينة القيروان (ليبيا حالياً) من أبوين يهوديين تقيين. انتقلت أسرته إلى أورشليم، وفي بيته تأسست أول كنيسة في العالم (علية صهيون) حيث أكل الرب الفصح مع تلاميذه وحل الروح القدس. انطلق في رحلات كرازية مع بولس وبرنابا، ثم جاء إلى مصر ليؤسس كنيسة الإسكندرية ويكون أول بطاركتها، وهناك أنشأ المدرسة اللاهوتية التي أضاءت العالم، ورسم إنيانوس أسقفاً مع مجموعة من القسوس والشمامسة.",
+                cross: "حمل القديس مرقس صليب الكرازة في أراض وثنية قاسية تموج بالفلسفات وتعدد الآلهة. جاب المسالك الوعرة متمزق الحذاء حتى وصل إلى الإسكندرية. واجه تحديات هائلة، بدءاً من مقاومة الفلاسفة الوثنيين واليهود، وصولاً إلى الاضطهاد العنيف. توج جهاده بحمل صليب الاستشهاد الفعلي حين هجم عليه الوثنيون في عيد إلههم سيرابيس، وربطوه بحبل غليظ وسحلوه في شوارع منطقة بوكاليا الصخرية على مدار يومين حتى تمزق جسده الطاهر وتخضبت أرض مصر بدمائه، ليكون أول شهداء الكرسي المرقسي.",
+                impact: "قدم القديس مرقس للعالم إنجيله الذي يُعد أقدم الأناجيل المكتوبة، والذي اتسم بالإيقاع السريع وإبراز قوة السيد المسيح وعجائبه فصار مرجعاً لاهوتياً حاسماً. كما أهدى البشرية كنيسة الإسكندرية التي صارت أعظم منارة للاهوت المسيحي في القرون الأولى. بفضله ارتبط اسم 'الأقباط' بالاستقامة الإيمانية والعمق اللاهوتي، وظل اسمه محفوراً كأحد أهم أعمدة المسيحية العالمية، وتُعد رفاته المقدسة بركة تتسابق الكنائس مثل كنيسة البندقية بإيطاليا على التبرك بها.",
+                quote: "«أَخِيرًا أَيُّهَا الإِخْوَةُ صَلُّوا لأَجْلِنَا، لِكَيْ تَجْرِيَ كَلِمَةُ الرَّبِّ وَتَتَمَجَّدَ، كَمَا عِنْدَكُمْ أَيْضًا.» (2 تس 3: 1)",
+                traits: [9, 4, 8, 7]
+            },
+            {
+                id: 2,
+                name: "البابا ديمتريوس الكرام",
+                title: "البابا الـ 12 وواضع حساب الإباقطي الفلكي",
+                chapter: "الباب الأول - عمالقة اللاهوت والفكر والحساب الفلكي بالإسكندرية",
+                bio: "هو البطريرك الثاني عشر في سلسلة باباوات الإسكندرية. كان في بداية حياته فلاحاً أمياً بسيطاً يعمل في زراعة الكروم (ومن هنا لقب بالكرام). تزوج بناءً على رغبة والديه، ولكنه اتفق مع زوجته على أن يعيشا كأخوين في بتولية كاملة وطهارة فائقة لمدة 47 عاماً دون أن يعلم أحد. اختير بعناية إلهية عجيبة ليصبح بطريركاً، حيث أرشد البابا يوليانوس سلفه بأن من سيدخل عليه بعنقود عنب في غير أوانه سيكون هو المختار. وبعد رسامته، أنار الله بصيرته فتعلم القراءة والعلوم بجهد فائق حتى فاق علماء عصره.",
+                cross: "حمل صليب المسؤولية الرعوية والتعليمية في عصر مليء بالتحديات الفكرية. فرغم بدايته كأمي، جاهد جهاداً مضنياً في سهر الليالي لتعلم اللاهوت والفلك حتى يقود كنيسة الإسكندرية العريقة التي تعج بالفلاسفة. كما حمل صليب الدفاع عن طهارته حين تذمر البعض لرسامة بطريرك متزوج، فأمره الملاك بكشف سره، فحمل جمراً متقداً في ثوبه هو وزوجته دون أن يحترقا، ليثبت بتوليتهما. وتجرع صليب المواجهة الحازمة مع أخطاء العلامة أوريجانوس للحفاظ على استقامة التسليم الكنسي.",
+                impact: "يُعد البابا ديمتريوس فخراً علمياً وكنسياً للكنيسة القبطية على مستوى العالم. فهو واضع 'حساب الإباقطي' الدقيق، وهو نظام فلكي ورياضي معقد لضبط موعد عيد القيامة بحيث يأتي دائماً بعد الفصح اليهودي والاعتدال الربيعي. أرسل هذا الحساب لأساقفة العالم، فاعتمدته كنائس روما وأنطاكية وأورشليم. بفضله توحد العالم المسيحي كله في الاحتفال بعيد القيامة، مؤكداً ريادة الكنيسة القبطية ليس فقط في اللاهوت بل في علوم الفلك والرياضيات.",
+                quote: "«بَلِ اخْتَارَ اللهُ جُهَالَ الْعَالَمِ لِيُخْزِيَ الْحُكَمَاءَ، وَاخْتَارَ اللهُ ضُعَفَاءَ الْعَالَمِ لِيُخْزِيَ الأَقْوِيَاءَ.» (1 كو 1: 27)",
+                traits: [8, 6, 5, 6]
+            },
+            {
+                id: 3,
+                name: "العلامة أوريجانوس الإسكندري",
+                title: "نابغ اللاهوت والشارح الأكبر",
+                chapter: "الباب الأول - عمالقة اللاهوت والفكر والحساب الفلكي بالإسكندرية",
+                bio: "ولد في الإسكندرية عام 185م من أبوين مسيحيين تقيين؛ والده هو الشهيد ليونيداس. أظهر أوريجانوس نبوغاً مبكراً في حفظ ودراسة الكتاب المقدس. عين مديراً لمدرسة الإسكندرية اللاهوتية وهو في الثامنة عشرة من عمره. اشتهر بغزارة إنتاجه العلمي والتفسيري، حتى قيل إنه ألف أكثر من ستة آلاف كتاب ومقال. استخدم التفسير الرمزي والروحي للكتاب المقدس ببراعة منقطعة النظير، وصار المعلم الأول الذي تتلمذ على يديه أساقفة وقديسون.",
+                cross: "حمل أوريجانوس صليباً مركباً من النسك الشديد والاضطهاد. فقد عاش حياة تقشفية قاسية كان يمشي حافي القدمين، ينام على الأرض، ويقضي لياليه في الصلاة والدراسة المضنية. وفي عهد الإمبراطور ديسيوس، تحمل صليب الاعتراف والتعذيب؛ حيث ألقي في السجن، وضرب بالسياط، ووضعت في رقبته أطواق الحديد، وربطت قدماه في المقطرة لعدة أيام، واحتمل كل هذا بشجاعة بطولية لرفضه إنكار المسيح، حتى تهالك جسده وتوفي متأثراً بجراحه بعد الإفراج عنه بفترة قصيرة.",
+                impact: "أثرى أوريجانوس التراث الإنساني والمسيحي العالمي بأعظم عمل لغوي ولاهوتي في عصره وهو كتاب 'الهيكسابلا' (السداسية)، والذي جمع فيه ست ترجمات مختلفة للعهد القديم في أعمدة متوازية للمقارنة الدقيقة. صار المرجع الأول لكل الدارسين واللاهوتيين في العالم القديم. ورغم الجدل اللاهوتي حول بعض شطحاته الفكرية اللاحقة، إلا أن الكنائس الغربية والشرقية تجمع على أنه 'أعظم عقل في الكنيسة المبكرة'، وأنه مهد الطريق لصياغة اللاهوت المسيحي بشكل منهجي أكاديمي.",
+                quote: "«بَلْ فِي كُلِّ شَيْءٍ نُظْهِرُ أَنْفُسَنَا كَخُدَّامِ اللهِ: فِي صَبْرٍ كَثِيرٍ، فِي شدَائِدَ، فِي ضَرُورَاتٍ، فِي ضِيقَاتٍ» (2 كو 6: 4)",
+                traits: [10, 7, 6, 3]
+            },
+            {
+                id: 4,
+                name: "القديس أثناسيوس الرسولي",
+                title: "البابا الـ 20 - حامي العقيدة وبطل مجمع نيقية",
+                chapter: "الباب الأول - عمالقة اللاهوت والفكر والحساب الفلكي بالإسكندرية",
+                bio: "ولد في صعيد مصر أواخر القرن الثالث. لفت انتباه البابا ألكسندروس وهو طفل يلعب دور المعمد، فتبناه الكرسي المرقسي وتتلمذ لاهوتياً، كما قضى فترة في البرية ليتتلمذ نسكياً على يد الأنبا أنطونيوس. حضر مجمع نيقية المسكوني عام 325م وهو لا يزال شماساً شاباً، وهناك سطع نجمه في تفنيد بدعة أريوس التي أنكرت لاهوت السيد المسيح. اختير بطريركاً للإسكندرية، وظل يقود الكنيسة لمدة 46 عاماً، أمضى معظمها في الكفاح لحفظ الإيمان.",
+                cross: "حمل أثناسيوس أثقل صليب يمكن لراع أن يحمله: 'صليب الدفاع عن جوهر الإيمان وحده ضد العالم'. واجه غضب الأباطرة الرومان مثل قسطنطينوس ويوليانوس الجاحد الذين مالوا للأريوسية. نُفي خمس مرات عن كرسيه مقضياً حوالي 17 عاماً مشتتاً في منافي أوروبا (تريير بروما) وصحاري مصر، هارباً من سيوف الجند ومؤامرات الهراطقة. ومع ذلك، لم يتنازل عن حرف واحد (حرف اليوتا) في العقيدة، مطلقاً مقولته الخالدة حين قيل له العالم كله ضدك: 'وأنا ضد العالم'.",
+                impact: "يدين العالم المسيحي بأسره للقديس أثناسيوس بحفظ الإيمان الأرثوذكسي. قوانين الإيمان التي ترددها الكنائس الكاثوليكية، والأرثوذكسية، والبروتستانتية اليوم هي ثمرة جهاده ودفاعه المستميت. كتاباته اللاهوتية العميقة، وعلى رأسها كتاب 'تجسد الكلمة'، تُدرس في أعرق الجامعات اللاهوتية كأعظم كلاسيكيات الفكر المسيحي. كما نقل لأوروبا سحر الرهبنة المصرية عندما كتب سيرة الأنبا أنطونيوس أثناء نفيه، مما أشعل شرارة الرهبنة في الغرب.",
+                quote: "«حينما أمدح أثناسيوس، فإنما أمدح الفضيلة ذاتها... لقد كان للذين ضُرِبوا من الهراطقة كحجر الزاوية، وللذين يَضْرِبون كالمطرقة.» — القديس غريغوريوس النزينزي",
+                traits: [10, 5, 10, 4]
+            },
+            {
+                id: 5,
+                name: "القديس كيرلس الكبير",
+                title: "البابا الـ 24 - عمود الدين ورئيس مجمع أفسس",
+                chapter: "الباب الأول - عمالقة اللاهوت والفكر والحساب الفلكي بالإسكندرية",
+                bio: "ولد بالإسكندرية، وهو ابن أخت البابا ثاوفيلس. تلقى تعليماً رفيعاً في مدرسة الإسكندرية وقضى خمس سنوات في برية شيهيت ليتشرب الحياة النسكية. رُسم بطريركاً عام 412م. واجه في عصره تحديات خطيرة، أبرزها ظهور 'نسطور' بطريرك القسطنطينية، الذي نادى بانفصال اللاهوت عن الناسوت في المسيح ورفض تلقيب العذراء بـ 'والدة الإله'. تصدى له كيرلس برسائله اللاهوتية العميقة، وترأس مجمع أفسس المسكوني الأول عام 431م، حيث دحض البدعة وأقر الإيمان المستقيم.",
+                cross: "حمل صليب 'مواجهة السلطة السياسية والتشهير الكنسي'. فقد واجه مؤامرات دنيئة من الإمبراطور ثيودوسيوس الصغير ومن بعض الأساقفة الميالين لنسطور (مثل يوحنا الأنطاكي). تم القبض عليه وسجنه في أفسس وسط جنود قساة، وتعرض لظلم بين ومحاولات اغتيال معنوي لتشويه صورته كراع قاسٍ، بينما كان يدافع بمرارة عن وحدة طبيعة المسيح ('طبيعة واحدة للكلمة المتجسد'). احتمل الإهانات والتهديدات بصبر الرعاة وحكمة اللاهوتيين حتى ظهر الحق.",
+                impact: "منح كنيسة الإسكندرية لقبها الخالد 'حارسة الإيمان'. صاغ البابا كيرلس مصطلحات وتعبيرات لاهوتية دقيقة لا تزال كافة الكنائس تستخدمها حتى اليوم لحل أعقد المعضلات حول طبيعة المسيح. كما وضع مقدمة قانون الإيمان ('نعظمك يا أم النور الحقيقي')، التي ترتل في الكنائس حول العالم. أثبت للعالم أن الكنيسة القبطية لا تبحث عن السلطة، بل هي أمينة على الوديعة الرسولية التي استلمتها، وأن اللاهوت الأرثوذكسي هو لاهوت الخلاص المعاش.",
+                quote: "«يَا تِيمُوثَاوُسُ احْفَظِ الْوَدِيعَةَ، مُعْرِضًا عَنِ الْكَلَامِ الْبَاطِلِ الدَّنِسِ، وَمُخَالَفَاتِ الْعِلْمِ الْكَاذِبِ الاسْمِ.» (1 تي 6: 20)",
+                traits: [10, 5, 8, 5]
+            },
+            {
+                id: 6,
+                name: "القديس كليمنضس الإسكندري",
+                title: "مدير المدرسة اللاهوتية وفيلسوف المسيحية",
+                chapter: "الباب الأول - عمالقة اللاهوت والفكر والحساب الفلكي بالإسكندرية",
+                bio: "تيتوس فلافيوس كليمنضس، ولد في منتصف القرن الثاني الميلادي لأبوين وثنيين وتلقى تعليماً يونانياً وفلسفياً عالي المستوى. انطلق في رحلة بحث شغوفة عن الحقيقة جاب فيها اليونان وإيطاليا والشرق حتى وجد ضالته في الإسكندرية على يد العلامة بنتينوس. آمن بالمسيحية وتعمّد، وسخّر عقله الفلسفي لخدمة الإنجيل. سيم كاهناً وصار مديراً للمدرسة اللاهوتية، فجعلها أكاديمية تنافس كبرى المدارس الفلسفية الوثنية في زمانها.",
+                cross: "حمل كليمنضس صليب الجهاد الفكري والتغريب. كان يعيش في مجتمع يزدري المسيحية ويعتبرها ديانة للبسطاء والعبيد، فكان جهاده منصباً على تحويل الفلسفة لتكون خادمة للاهوت. وعندما اندلع اضطهاد الإمبراطور سيفيروس العنيف للمسيحيين، اضطر كليمنضس - حرصاً على حياته وحياة تلاميذه - لمغادرة الإسكندرية المحببة لقلبه عاش سنواته الأخيرة متجولاً في بلاد الشام وآسيا الصغرى، محتملاً ألم الغربة والفقد، لكنه استمر يعلم ويخدم ويثبت الكنائس حتى تنيح.",
+                impact: "يُعد كليمنضس الرائد الأول الذي أقام جسراً بين الثقافة الهيلينستية (اليونانية) والإيمان المسيحي. أثبت للعالم المتقدم آنذاك أن المسيحية هي الفلسفة الحقيقية واللوغوس (الكلمة) الأسمى. كتاباته العظيمة، خاصة ثلاثيته (النصائح لليونانيين، المربي، ومتفرقات - ستروماتيس)، تُعد كنوزاً للإنسانية في الأخلاق والفكر والتربية. قدم المسيح كـ 'المعلم الأكبر' للبشرية، مما جعل الفكر الإسكندري مقبولاً ومحترماً في أروقة النخب المثقفة عالمياً.",
+                quote: "«فَإِنَّ الرَّبَّ يُعْطِي حِكْمَةً. مِنْ فَمِهِ الْمَعْرِفَةُ وَالْفَهْمُ.» (أم 2: 6)",
+                traits: [9, 4, 4, 5]
+            },
+            {
+                id: 7,
+                name: "القديس العلامة بنتينوس",
+                title: "مبشر الهند ومخترع الأبجدية القبطية",
+                chapter: "الباب الأول - عمالقة اللاهوت والفكر والحساب الفلكي بالإسكندرية",
+                bio: "كان فيلسوفاً رواقياً لامعاً من صقلية، اهتدى إلى المسيحية بفضل نقاء تعاليمها. جاء إلى الإسكندرية وأعجب البابا ديمتريوس الكرام بعلمه وغيرته، فعيّنه مديراً لمدرسة الإسكندرية اللاهوتية في أواخر القرن الثاني الميلادي. لم يكن بنتينوس مجرد باحث أكاديمي يجلس بين الكتب، بل كان قلبه يشتعل بحب الكرازة وخلاص النفوس، فاستطاع أن يجمع بين عمق الفيلسوف وحرارة المبشر.",
+                cross: "استجاب بنتينوس لنداء الكنيسة، فترك مقعده المريح كمدير للمدرسة اللاهوتية وحمل 'صليب الكرازة والأسفار الشاقة'. سافر في رحلة كرازية محفوفة بالمخاطر إلى الهند واليمن. واجه مخاطر السفر بحراً وبراً في العصور القديمة، وصعوبة التأقلم مع مناخات قاسية، واختلاف اللغات والثقافات والمقاومة الوثنية، باذلاً صحته وراحته من أجل إيصال بشارة الخلاص لأمم بعيدة لم تكن تعرف المسيح.",
+                impact: "سجل التاريخ لبنتينوس اكتشافاً عالمياً؛ حيث وجد في الهند نسخة من إنجيل متى باللغة العبرية كان قد تركها القديس برثولماوس الرسول، فأحضرها معه إلى الإسكندرية ككنز أثري وروحي. وعلى الصعيد الحضاري، ساهم بنتينوس إسهاماً عظيماً بابتكاره أو تطويره بالتعاون مع آخرين الأبجدية القبطية عبر مزج الحروف اليونانية بسبعة أحرف ديموطيقية مصرية. هذا الابتكار العبقري لم ينشر الإنجيل بين عموم المصريين فحسب، بل حفظ الهوية والثقافة المصرية من الاندثار.",
+                quote: "«مَا أَجْمَلَ أَقْدَامَ الْمُبَشِّرِينَ بِالسَّلاَمِ، الْمُبَشِّرِينَ بِالْخَيْرَاتِ.» (رو 10: 15)",
+                traits: [8, 4, 6, 8]
+            },
+            {
+                id: 8,
+                name: "القديس ديديموس الضرير",
+                title: "عبقري التحدي ومخترع الحروف البارزة",
+                chapter: "الباب الأول - عمالقة اللاهوت والفكر والحساب الفلكي بالإسكندرية",
+                bio: "ولد ديديموس بالإسكندرية عام 313م، وفقد بصره تماماً في سن الرابعة بسبب مرض في عينيه. ورغم حرمانه من نعمة البصر في زمن خال من أي تسهيلات للمكفوفين، إلا أنه امتلك بصيرة روحية وعقلية جبارة. أصر على التعلم، فأتقن النحو والفلسفة والمنطق، والرياضيات والأهم اللاهوت وتفسير الكتاب المقدس. لما رأى البابا أثناسيوس الرسولي من نبوغه الاستثنائي وتقواه عينه مديراً لمدرسة الإسكندرية اللاهوتية، فاستمر في هذا المنصب لنحو نصف قرن.",
+                cross: "حمل ديديموس صليب 'الإعاقة الجسدية والتحدي العلمي'. لم يستسلم لليأس أو يكتفِ بالتسول كما كان حال المكفوفين في عصره، بل جاهد بذاكرته بشكل مضنٍ ليستوعب آلاف الكتب. ولما أراد القراءة بنفسه، استحدث طريقة للحفر على الألواح الخشبية ليقرأ بأصابعه. تحمل عناء تحصيل العلم المضني، والسهر الروحي، والصلاة العميقة، حتى تفتحت عينا قلبه ليرى أسرار اللاهوت التي عجز المبصرون عن رؤيتها.",
+                impact: "سبق ديديموس العالم الغربي ولويس برايل بـ 15 قرناً في ابتكار الكتابة البارزة للمكفوفين مقدماً للإنسانية أعظم درس في قهر الإعاقة بقوة الإرادة. صار قبلة للعلماء والقديسين من كل العالم؛ فقصده القديس أنطونيوس الكبير ليستمع لحكمته، وجاءه القديس جيروم (مترجم الكتاب المقدس للاتينية) وروفينوس خصيصاً من أوروبا ليتتلمذوا على يديه. أثبت للعالم أن البصيرة الروحية تسمو فوق البصر الجسدي.",
+                quote: "قال له القديس أنطونيوس الكبير معزياً: «لا تحزن يا ديديموس لفقدك البصر الجسدي الذي تشترك فيه الحيوانات، بل افرح وتعز لأن لك البصر الروحي الذي تبصر به الله، وتدرك به أسراره الخفية.»",
+                traits: [10, 5, 7, 5]
+            },
+
+            // الباب الثاني
+            {
+                id: 9,
+                name: "القديس الأنبا أنطونيوس الكبير",
+                title: "أبو الرهبنة في العالم وملهم قديسي الغرب",
+                chapter: "الباب الثاني - رواد النسك والرهبنة العالمية",
+                bio: "ولد عام 251م في قرية 'قمن العروس' بصعيد مصر لأبوين ثريين تقيين. توفي والداه وهو في العشرين من عمره تاركين له ثروة طائلة وأختاً صغرى. دخل الكنيسة فسمع الآية الإنجيلية: 'إن أردت أن تكون كاملاً فاذهب وبع أملاكك...'، فنفذها حرفياً؛ أودع أخته في بيت للعذارى ووزع ثروته على الفقراء، وانطلق إلى الصحراء ليتنسك. توغل تدريجياً في البرية الشرقية حتى استقر في جبل القلزم (قرب البحر الأحمر)، ليؤسس بذلك أول نواة للحياة الرهبانية والتكريس الكامل لله.",
+                cross: "حمل الأنبا أنطونيوس صليب العزلة التامة وحروب الشياطين. عاش في قسوة الصحراء لعشرات السنين دون أن يرى وجه إنسان. واجه حروباً شيطانية مرعبة؛ حيث هاجمته الأرواح الشريرة بحروب الخوف والشهوة والملل، بل واعتدت عليه بالضرب الجسدي المبرح حتى تركته بين حي وميت. ومع ذلك، تسلح بصليب الصلاة المستمرة، والصوم القاسي، والتواضع العميق، مقدماً نموذجاً حياً لـ 'الاستشهاد غير الدموي' أو الاستشهاد اليومي بالموت عن العالم ومباهجه.",
+                impact: "أضاء الأنبا أنطونيوس العالم أجمع؛ فهو يُلقب بـ 'أبو رهبان العالم'. السيرة التي كتبها عنه تلميذه البابا أثناسيوس، بمجرد ترجمتها إلى اللاتينية، أحدثت زلزالاً روحياً في الغرب. فقد كانت هذه السيرة هي السبب المباشر في توبة قديسين عظام مثل القديس أغسطينوس وألهمت الآلاف في أوروبا لترك ملذات الدنيا والاتجاه للتكريس. جعل من صحراء مصر القاحلة مدينة ملائكية يقصدها الفلاسفة والأباطرة مثل الإمبراطور قسطنطين طلباً لرسالة بركة من القديس.",
+                quote: "«إِنْ أَرَدْتَ أَنْ تَكُونَ كَامِلًا فَاذْهَبْ وَبِعْ أَمْلاَكَكَ وَأَعْطِ الْفُقَرَاءَ، فَيَكُونَ لَكَ كَنْزٌ فِي السَّمَاءِ، وَتَعَالَ اتَّبَعْنِي.» (مت 19: 21)",
+                traits: [4, 10, 5, 4]
+            },
+            {
+                id: 10,
+                name: "القديس الأنبا باخوميوس",
+                title: "أب الشركة ومشرع قوانين الأديرة",
+                chapter: "الباب الثاني - رواد النسك والرهبنة العالمية",
+                bio: "ولد في إقليم الأقصر بصعيد مصر عام 292م لأسرة وثنية. تجنّد قسراً في الجيش الروماني. وأثناء ترحيله مع الجنود مروا بمدينة إسنا، وهناك قدم لهم المسيحيون الطعام والرعاية بمحبة فائقة للغرباء. تأثر باخوميوس بشدة بهذا الحب العملي، فنذر نفسه لإله هؤلاء المسيحيين. بعد خروجه من الجيش تعمد وتتلمذ على يد الناسك بلامون. ثم ألهمه الروح القدس (بواسطة ملاك) لتأسيس 'نظام الشركة الرهبانية' (الكينونيا / السينوبيتيك)، حيث يعيش الرهبان في مجمع واحد تحت قانون موحد وإدارة منظمة.",
+                cross: "حمل الأنبا باخوميوس صليب 'الإدارة والطاعة وإنكار الذات'. قاد آلاف الرهبان ذوي الطباع والخلفيات المختلفة، وتحمل تمرد البعض، وضعفات البعض الآخر. كان صليبه يكمن في التوفيق بين الحزم التنظيمي العسكري الذي استقاه من خلفيته وبين حنان الأبوة الباذلة. سهر الليالي الطوال لصياغة وتطبيق قوانين الرهبنة، وكان يعمل بيديه كأصغر راهب في الدير ليكون قدوة حية لغسل الأرجل وخدمة الإخوة.",
+                impact: "نظام الشركة الباخومي هو الدستور الأساسي الذي استمدت منه كافة القوانين الرهبانية في العالم أجمع. فالقديس باسيليوس الكبير في الشرق والقديس بندكت في الغرب، بنيا أنظمتهما على قوانين باخوميوس. كما قدم للعالم مفهوماً جديداً للرهبنة يجعل من الدير خلية نحل منتجة؛ حيث دمج العبادة المستمرة بالعمل اليدوي الجماعي (الزراعة، الحدادة، النسيج)، فساهمت الأديرة في نهضة اقتصادية واجتماعية، وصارت مستشفيات وملاجئ للفقراء.",
+                quote: "«هُوَذَا مَا أَطْيَبَ وَمَا أَحْسَنَ أَنْ يَسْكُنَ الإِخْوَةُ مَعًا!» (مز 133: 1)",
+                traits: [6, 9, 5, 8]
+            },
+            {
+                id: 11,
+                name: "القديس الأنبا مكاريوس الكبير",
+                title: "مؤسس برية شيهيت وبطل التواضع",
+                chapter: "الباب الثاني - رواد النسك والرهبنة العالمية",
+                bio: "ولد في قرية شبشير بمنوفية مصر. كان يعمل في شبابه جمالاً ينقل النطرون، مما جعله خبيراً بمسالك الصحراء. مال قلبه لله منذ حداثته، واضطر للزواج إرضاءً لوالديه ولكنه عاش بتولاً، ولما تنيحت زوجته ووالداه، وزع أمواله وانطلق للنسك. بعد فترة من التتلمذ، قاده الروح إلى برية الإسقيط (وادي النطرون حالياً) ليؤسس هناك أعظم تجمع رهباني في التاريخ القبطي. اتسم بانسحاق القلب، والحكمة الفائقة، والمحبة الساترة، حتى سمي 'مكاريوس' (أي الطوباوي).",
+                cross: "حمل الأنبا مكاريوس أشكالاً قاسية من صلبان الجهاد. الصليب الأبرز كان 'الاحتمال والظلم'؛ فحينما كان ناسكاً في إحدى القرى اتهمته فتاة كذباً بالخطيئة معها، فثار عليه أهل القرية وضربوه وسحلوه. لم يدافع عن نفسه بل قال لنفسه 'يا مقاريوس لقد صار لك زوجة وأولاد ويجب أن تعمل لتطعمهم'، وعمل ليعولها حتى كشف الله براءته أمام الجميع. كما احتمل صليب النسك القاسي في حر شيهيت وبردها، وصليب القيادة الروحية لآلاف النفوس المتعطشة لله.",
+                impact: "برية شيهيت التي أسسها الأنبا مكاريوس لا تزال حتى اليوم تنبض بالحياة، وتعد مقصداً روحياً لراغبي الحياة الملائكية من كل بقاع الأرض. رسائله وعظاته المعروفة بعظات مقاريوس الـ (50) ترجمت للغات كثيرة وتعد من أعظم كلاسيكيات الروحانية في العالم، حيث أثرت في كبار اللاهوتيين في الغرب (مثل جون ويسلي). قدم للعالم نموذج القديس الذي يصير 'إلهاً أرضياً' من خلال التغطية على ضعفات الآخرين ومحبتهم بلا شروط.",
+                quote: "«كما أن الله يستر على أخطاء العالم، هكذا كان مقاريوس يغطي على ضعفات الإخوة، كأنه لا يرى ولا يسمع.» — من بستان الرهبان",
+                traits: [5, 10, 4, 7]
+            },
+            {
+                id: 12,
+                name: "القديس الأنبا شنودة رئيس المتوحدين",
+                title: "عملاق الأدب ورائد الرعاية الاجتماعية",
+                chapter: "الباب الثاني - رواد النسك والرهبنة العالمية",
+                bio: "ولد في قرية شندويل بسوهاج عام 332م. كان يرعى الغنم في طفولته ويقضي ليله في الصلاة. خاله هو الأنبا بيجول مؤسس الدير الأبيض، فذهب إليه شنودة وتتلمذ على يديه. بعد نياحة خاله، أختير رئيساً للدير الذي ضم آلاف الرهبان والراهبات. امتاز بشخصية قيادية فذة، وغيرة نارية على الإيمان، وشارك مع البابا كيرلس الكبير في مجمع أفسس. امتدت حياته لأكثر من 118 عاماً قضاها في الإصلاح الرهباني والمجتمعي.",
+                cross: "حمل الأنبا شنودة صليب 'الإصلاح المجتمعي والدفاع عن الهوية'. واجه ببسالة بقايا الوثنية في صعيد مصر، وتصدى للطغاة الإقطاعيين الذين كانوا يظلمون الفلاحين المصريين. كما حمل صليب الرعاية الاجتماعية الشاقة؛ ففي أوقات الغارات والغلاء، فتح أبواب الدير الأبيض لآلاف اللاجئين، محولاً إياه إلى مستشفى ومخبز وملجأ للفقراء. لم يكتفِ بنسك البرية، بل حمل عبء آلام شعبه، فكان قائداً وطنياً وروحياً في آن واحد.",
+                impact: "يُعد الأنبا شنودة رائد 'المسيحية الاجتماعية التطبيقية'؛ حيث قدم ديره كنموذج أولي لمؤسسات الرعاية المتكاملة (الخدمة المجتمعية) التي عرفها العالم لاحقاً. والأهم أنه يُصنف عالمياً كأعظم كتاب الأدب القبطي الأصيل في التاريخ. بخلاف من سبقوه الذين كتبوا باليونانية، أصر شنودة على الكتابة باللغة القبطية، فأثرى المكتبة العالمية بمقالات وعظات رائعة رفعت من شأن اللغة والثقافة المصرية الأصيلة وحفظتها من الذوبان في الثقافة الهيلينستية.",
+                quote: "«لأَنَّ غَيْرَةَ بَيْتِكَ أَكَلَتْنِي، وَتَعْيِيرَاتِ مُعَيِّرِيكَ وَقَعَتْ عَلَيَّ.» (مز 69: 9)",
+                traits: [8, 8, 8, 8]
+            },
+            {
+                id: 13,
+                name: "القديس الأنبا بولا",
+                title: "أول السواح وأيقونة التجريد والاتصال بالسماء",
+                chapter: "الباب الثاني - رواد النسك والرهبنة العالمية",
+                bio: "ولد في الإسكندرية لأبوين ثريين توفيا وتركا له ولأخيه الأكبر ثروة طائلة. حدث خلاف بينه وبين أخيه على الميراث تزامناً مع اندلاع اضطهاد الإمبراطور ديسيوس للمسيحيين. أدرك بولا الشاب تفاهة العالم، فترك الميراث وهرب إلى الصحراء الشرقية (قرب البحر الأحمر) ليحفظ إيمانه وبتوليته. مكث في مغارة نائية لأكثر من سبعين عاماً لم ير فيها وجه إنسان، منقطعاً تماماً عن كل ما يمت للأرض بصلة، ليتفرغ للتسبيح والتأمل السماوي.",
+                cross: "كان صليبه هو 'التجريد الكامل' والموت الاختياري عن كل تعزية بشرية أو مادية. عاش في صمت مهيب ووحشة صحراوية قاسية ملتحفاً بثوب من ليف النخل. احتمل قسوة البرد القارس شتاءً وحرارة الصحراء اللافحة صيفاً. اعتمد كلياً على العناية الإلهية التي كانت ترسل له غراباً بنصف خبزة يومياً ليعيش عليها. جاهد جهاد السواح الفائق للطبيعة، ليحقّق أعلى درجات السمو الروحي والاتصال المباشر بالله دون أي تشتت أرضي.",
+                impact: "يمثل الأنبا بولا أيقونة التحرر الكامل من المادة التي لطالما بحثت عنها الفلسفات العالمية (مثل الرواقية وغيرها). قصته العجيبة، التي اكتشفها الأنبا أنطونيوس لاحقاً وكتبها القديس جيروم، قدمت للعالم نموذجاً مذهلاً لانتصار الروح على متطلبات الجسد المادية. صار شفيعه ملجأ للمتأملين في الغرب والشرق، وديره بالبحر الأحمر يُعد من أقدم الأديرة في العالم، شاهداً على أن الإنسان قادر أن يعيش كالملاك متى اتكل كلياً على الله.",
+                quote: "«مَنْ يَفْصِلُنَا عَنْ مَحَبَّةِ الْمَسِيحِ؟ أَشِدَّةٌ أَمْ ضَيْقٌ أَمِ اضْطِهَادٌ أَمْ جُوعٌ أَمْ عُرْيٌ أَمْ خَطَرٌ أَمْ سَيْفٌ؟» (رو 8: 35)",
+                traits: [2, 10, 4, 2]
+            },
+            {
+                id: 14,
+                name: "القديس الأنبا موسى الأسود",
+                title: "أيقونة التوبة العالمية ومرجع علم النفس الروحي",
+                chapter: "الباب الثاني - رواد النسك والرهبنة العالمية",
+                bio: "كان عبداً مملوكاً في مصر، طرده سيده لسوء سلوكه وشراسته فصار زعيماً لعصابة من قطاع الطرق. اتسم بالقوة الجسدية المفرطة والعنف وارتكاب كافة الشرور من قتل وسرقة وزنا. إلا أن بداخله كان هناك عطش لمعرفة 'الإله الحقيقي' وخالق الشمس. قاده هذا البحث إلى برية شيهيت، حيث التقى بالقديس إيسيذوروس قس الإسقيط. آمن موسى، وتاب توبة جبارة اعترف فيها بكل خطاياه علناً بدموع غزيرة، وتحول من أشرس الخطاة إلى أودع آباء الرهبنة وأكثرهم حكمة.",
+                cross: "حمل الأنبا موسى أثقل الصلبان وأكثرها إيلاماً: 'جهاد الدم ضد العادات القديمة الراسخة'. عانى بشدة من حروب الزنا والغضب وذكريات خطاياه السابقة التي طاردته بقوة الشياطين. كان يعاقب جسده القوي بالصوم الطويل والوقوف المستمر في الصلاة، وكان يطوف ليلاً على قلالي الإخوة الشيوخ ليملأ جرارهم بالماء مسافة أميال كثيرة، ليذل جسده ويكسر كبرياءه. انتصر بقوة النعمة، ونال في النهاية إكليل الشهادة على يد البربر حين رفض الهروب قائلاً: 'الذين يأخذون بالسيف بالسيف يهلكون'.",
+                impact: "صار الأنبا موسى الأسود مرجعاً عملياً في علم النفس الروحي وعلاج الإدمان وتغيير السلوك البشري. سيرته تُدرس في كنائس العالم كأعظم إثبات على أن النعمة الإلهية قادرة على إحداث تغيير جذري في أعماق الإنسان؛ فتحول قاطع الطرق إلى شفيع للتائبين. مقولاته الحكيمة (مثل: من يرى خطاياه لا يرى خطايا غيره) تُشكل دستوراً عالمياً في التواضع وعدم الإدانة، وتلهم الملايين الذين يعانون من اليأس للعودة إلى حضن الله.",
+                quote: "«هل أخطائي تجري ورائي وأنا لا أراها، واليوم جئت لأدين خطايا غيري؟» — مقولة الأنبا موسى حين دُعي لمحاكمة أخ مخطئ فحمل كيس رمل مثقوباً خلف ظهره.",
+                traits: [4, 9, 7, 5]
+            },
+
+            // الباب الثالث
+            {
+                id: 15,
+                name: "القديس موريس",
+                title: "قائد الكتيبة الطيبية والشفيع القومي لسويسرا",
+                chapter: "الباب الثالث - شهداء وسفراء قبط في قلب أوروبا",
+                bio: "هو ابن مدينة طيبة (الأقصر بصعيد مصر). كان قائداً فذاً للكتيبة العسكرية الرومانية المعروفة بـ 'الكتيبة الطيبية'، والتي ضمت أكثر من 6600 جندي مسيحي من شباب الأقباط البواسل في عهد الإمبراطور دقلديانوس ومكسيميانوس. أرسلت هذه الكتيبة إلى أوروبا (في المنطقة المعروفة حالياً بسويسرا) لإخماد ثورات القبائل هناك. عُرف الجنود بشجاعتهم العسكرية، ولكنهم كانوا أيضاً مسيحيين أتقياء يمارسون إيمانهم سراً وجهراً.",
+                cross: "عندما وصلت الكتيبة إلى سويسرا، أصدر الإمبراطور مكسيميانوس أمراً لجميع الجنود بتقديم الذبائح والتبخير للآلهة الوثنية، والمشاركة في إبادة المسيحيين المحليين بتلك المنطقة. هنا حمل القديس موريس وجنوده صليب 'المعارضة السلمية والثبات العقيدي'. رفضوا طاعة الأوامر التي تخالف وصايا المسيح. أمر الإمبراطور بقتل عشر الكتيبة لإرهاب الباقين، ففرح الشهداء. استمر الرفض، فتكرر القتل العشري، حتى انتهى الأمر بمذبحة مروعة تم فيها إعدام كامل الكتيبة؛ حيث رموا أسلحتهم وقدموا أعناقهم للسيوف حباً في الملك السماوي.",
+                impact: "غيرت دماء القديس موريس وكتيبته وجه أوروبا المسيحية. صار الشفيع القومي لدولة سويسرا، وتأسست على اسمه مدينة 'سان موريس' التي تضم ديراً يحمل رفاته حتى اليوم. أظهر هؤلاء الأقباط لأوروبا أن الفروسية والقوة الحقيقية ليستا في سفك دماء الأبرياء بسيف الإمبراطور، بل في التضحية بالنفس من أجل المبادئ. صار موريس أيقونة لـ 'الجندي المسيحي' الذي يوازن بين الولاء للوطن والولاء المطلق لله.",
+                quote: "«فَأَجَابَ بُطْرُسُ وَالرُّسُلُ وَقَالُوا: يَنْبَغِي أَنْ يُطَاعَ اللهُ أَكْثَرَ مِنَ النَّاسِ.» (أع 5: 29)",
+                traits: [3, 3, 10, 6]
+            },
+            {
+                id: 16,
+                name: "القديسة فيرينا",
+                title: "ابنة الصعيد ورائدة التمريض والنظافة في أوروبا",
+                chapter: "الباب الثالث - شهداء وسفراء قبط في قلب أوروبا",
+                bio: "هي فتاة قبطية من قرية جراجوس بمركز قوص بمحافظة قنا. نشأت في أسرة مسيحية تقية، واعتادت خدمة الآخرين. رافقت الكتيبة الطيبية بقيادة القديس موريس في رحلتها إلى أوروبا، لتقوم بمهام تقديم الرعاية الطبية، وإعداد الطعام، وحياكة الملابس للجنود الأقباط. بعد المذبحة المروعة واستشهاد أفراد الكتيبة، لم تعد فيرينا إلى مصر، بل فضلت البقاء في جبال الألب بسويسرا لتواصل رسالة المحبة والخدمة للشعب المحلي الوثني.",
+                cross: "حملت فيرينا صليب 'الغربة، والخدمة الصامتة، والاضطهاد'. عاشت وحيدة وغريبة في كهف ببلاد باردة وموحشة، وسط قبائل لم تكن تعرف المسيح أو حتى أبسط قواعد النظافة. استهدفتها السلطات الرومانية المحلية بالاضطهاد والسجن لمحاولتها نشر المسيحية وخدمة الناس، لكنها احتملت كل هذه الآلام بروح الصلاة والوداعة، متخلية عن دفء وطنها وعائلتها لتربح نفوس هؤلاء الغرباء للمسيح من خلال خدمتها العملية لهم.",
+                impact: "تُعد القديسة فيرينا 'رائدة النظافة الشخصية والتمريض' في أوروبا. لقد علمت قبائل سويسرا كيفية استخدام 'المشط' للاعتناء بشعورهم، واستخدام الماء للاستحمام والنظافة للوقاية من الأمراض، وعالجتهم بالوصفات الطبية والأعشاب المصرية. تصور أيقوناتها وتماثيلها في سويسرا وألمانيا وفرنسا وهي تحمل في يدها مشطاً مزدوجاً وفي اليد الأخرى إبريق ماء. هي سفيرة الحضارة المصرية المسيحية المانحة للحياة، وقد بنى السويسريون عشرات الكنائس على اسمها عرفاناً بجميلها.",
+                quote: "«فَلْيُضِئْ نُورُكُمْ هَكَذَا قُدَّامَ النَّاسِ، لِكَيْ يَرَوْا أَعْمَالَكُمُ الْحَسَنَةَ، وَيُمَجِّدُوا أَبَاكُمُ الَّذِي فِي السَّمَاوَاتِ.» (مت 5: 16)",
+                traits: [4, 5, 6, 10]
+            },
+            {
+                id: 17,
+                name: "القديس كاسيان القبطي",
+                title: "المعلم المصري وشفيع المربين في إيطاليا",
+                chapter: "الباب الثالث - شهداء وسفراء قبط في قلب أوروبا",
+                bio: "هو معلم (مدرس) مسيحي مصري، انتقل في أواخر القرن الثالث الميلادي للعمل والإقامة في مدينة إيمولا بإيطاليا. كان رجلاً أكاديمياً متخصصاً في تعليم الأطفال القراءة والكتابة، واللغات، ومهارات الخط. أسس هناك مدرسة ضمت العديد من الأطفال الإيطاليين (أغلبهم من الوثنيين). عُرف عن كاسيان صرامته الأكاديمية وحزمه في التربية، وفي الوقت ذاته حرصه البالغ على غرس القيم والأخلاق المسيحية الفاضلة في نفوس تلاميذه الصغار.",
+                cross: "عندما صدر مرسوم الإمبراطور باضطهاد المسيحيين، رُفع أمر المعلم كاسيان إلى الحاكم المحلي. ولما رفض إنكار إيمانه المسيحي والتبخير للأوثان، حُكم عليه بحكم في غاية البشاعة والقسوة؛ فقد أمر الحاكم بأن يُسلم كاسيان عارياً ومقيداً إلى تلاميذه الوثنيين الصغار ليقتلوه بأنفسهم. تمثل صليبه المرير في الألم النفسي والجسدي؛ حيث بدأ تلاميذه الذين علمهم بطعنه ببطء شديد بواسطة أقلامهم الحديدية (المخارز التي تُستخدم للكتابة على الشمع) وتجريح جسده حتى أسلم الروح محتملاً الألم بوداعة دون أن يلعنهم.",
+                impact: "صار القديس كاسيان القبطي في إيطاليا وعموم أوروبا 'الشفيع الأول للمدرسين، والمربين، والخطاطين'. قدم دمه كرسالة عملية وأخيرة لتلاميذه وللعالم عن الثبات على الحق مهما كان الثمن. جسدت شهادته أسمى معاني التفاني التربوي والصلابة الإيمانية القبطية في المهجر، مؤكداً أن المعلم المسيحي يكتب درسه الأخير بدمه ليبقى محفوراً في ضمير الإنسانية، وتُكرمه الكنيسة الغربية كأحد أبطالها التربويين العظام.",
+                quote: "«كُنْ أَمِينًا إِلَى الْمَوْتِ فَسَأُعْطِيكَ إِكْلِيلَ الْحَيَاةِ.» (رؤ 2: 10)",
+                traits: [8, 4, 8, 5]
+            },
+            {
+                id: 18,
+                name: "القديس فيكتور (مار بقطر)",
+                title: "بطل الشباب ومفضل الصليب على مجد البلاط",
+                chapter: "الباب الثالث - شهداء وسفراء قبط في قلب أوروبا",
+                bio: "هو شاب وسيم ابن 'رومانوس' الذي كان يشغل منصباً رفيعاً كوزير أو قائد عسكري كبير ومقرب جداً من الإمبراطور دقلديانوس في أنطاكية (وبعض المصادر تشير لخلفيته المصرية وارتباطه بالإسكندرية). نشأ بقطر في قصور المملكة، وتقلد أرفع الأوسمة والمناصب العسكرية (قائد في القصر) رغم صغر سنه (حوالي 20 عاماً). كانت كل أبواب المجد الأرضي، والثروة، والسلطان مفتوحة أمامه على مصراعيها.",
+                cross: "واجه بقطر إغراءات المجد الزائف، وحمل صليب 'التخلي الطوعي والمواجهة المباشرة'. حين بدأ الاضطهاد، جاهر بمسيحيته أمام الإمبراطور رافضاً عبادة الأوثان. تمثل صليبه الأكبر في أن والده (رومانوس) تبرأ منه وطلب إعدامه بل وأشرف على تعذيبه. تحمل بقطر عذابات مرعبة لا يتحملها بشر: الجلد القاسي، الحرق، وضع السم له، وقطع الأعضاء، واحتمل ألم الخذلان الأسري مفضلاً المسيح على أبيه الأرضي، حتى نال إكليل الشهادة بقطع رأسه.",
+                impact: "يمثل القديس بقطر أيقونة 'الشاب المسيحي' الذي يزن مجد العالم الترابي مقابل مجد الصليب الأبدي، فيختار الصليب بلا تردد. جسد رسالة عالمية لكل شباب العالم في كل العصور بأن المركز الاجتماعي، والمناصب العليا، والمظهر الخارجي لا قيمة لها إن تعارضت مع الإيمان المخلص وحب المسيح. ألهمت سيرته وشجاعته النادرة الآلاف من الوثنيين الذين شاهدوا عذاباته فآمنوا، وصار شفيعاً للشباب في الكنائس الشرقية.",
+                quote: "«بِالإِيمَانِ مُوسَى لَمَّا كَبِرَ أَبَى أَنْ يُدْعَى ابْنَ ابْنَةِ فِرْعَوْنَ، مُفَضِّلاً بِالأَحْرَى أَنْ يُذَلَّ مَعَ شَعْبِ اللهِ عَلَى أَنْ يَكُونَ لَهُ تَمَتُّعٌ وَقْتِيٌّ بِالْخَطِيَّةِ.» (عب 11: 24-25)",
+                traits: [3, 4, 10, 4]
+            },
+            {
+                id: 19,
+                name: "القديسان أباكير ويوحنا الإسكندريان",
+                title: "الأطباء عديمو الفضة ورائدو الطب المجاني",
+                chapter: "الباب الثالث - شهداء وسفراء قبط في قلب أوروبا",
+                bio: "أباكير كان طبيباً ماهراً وشهيراً بالإسكندرية، ويوحنا كان جندياً مسيحياً تقياً من الرها. التقيا في الإسكندرية وتوحدا في هدف روحي وإنساني واحد: معالجة المرضى مجاناً باسم السيد المسيح. لم يكتفيا بتقديم الوصفات الطبية العادية، بل ربطا العلاج الجسدي بالشفاء الروحي ودعوة المرضى للتوبة والإيمان، مؤكدين أن الشفاء الحقيقي ينبع من الله. ولما اشتد الاضطهاد، ترهب أباكير وتفرغ للعبادة.",
+                cross: "سمع القديسان أن هناك أماً مسيحية (أثناسيا) وبناتها الثلاث العذارى قد قبض عليهن في منطقة 'كانوب' (أبو قير حالياً). تركا راحتهما وذهبا سراً لدعمهن وتشجيعهن على الصمود لئلا يضعفن أمام التعذيب. قبض عليهما، وتحملا صليب العذاب المهول: الضرب، الحرق، وسلخ الجلد أمام أعين الفتيات لتشجيعهن. كان صليبهما مزدوجاً: ألم جسدي مبرح، وألم روحي خوفاً من ضعف الفتيات، حتى استشهدت العائلة أولاً، ثم قُطعت رأسا أباكير ويوحنا.",
+                impact: "عرف هذان القديسان عالمياً بلقب (Anargyroi - أي الأطباء عديمو الفضة). أسسا في الفكر المسيحي فكرة 'الطب الإنساني المجاني' الذي لا يهدف للربح بل يعكس محبة المسيح. نقلت رفاتهما لاحقاً إلى روما وعدة دول أوروبية، حيث بني المؤمنون مستشفيات وعيادات تحمل اسمهما تبركا بروحهما المضحية. كما أن منطقة 'أبو قير' بالإسكندرية تحمل اسم القديس أباكير حتى اليوم، تخليداً لذكراه كطبيب للإنسانية.",
+                quote: "«اشْفُوا مَرْضَى. طَهِّرُوا بُرْصًا. أَقِيمُوا مَوْتَى. أَخْرِجُوا شَيَاطِينَ. مَجَّانًا أَخَذْتُمْ، مَجَّانًا أَعْطُوا.» (مت 10: 8)",
+                traits: [4, 5, 7, 10]
+            },
+            {
+                id: 20,
+                name: "القديس مارمينا العجائبي",
+                title: "صاحب الشهرة العالمية ودير مربوط",
+                chapter: "الباب الثالث - شهداء وسفراء قبط في قلب أوروبا",
+                bio: "ولد بمصر لأبوين بارين (أودكسيس وأوفومية) بعد عقم طويل وصلوات بدموع، لذلك سمي 'مينا' أي آمين. توفي والداه وهو في سن الرابعة عشرة تاركين له ثروة كبيرة. التحق بالجندية وصار ضابطاً وذهب إلى فريجيا بآسيا الصغرى. لم يحتمل رؤية عبادة الأوثان ومنشورات الاضطهاد، فاستقال من الجيش ووزع أمواله واتجه للبرية متوحداً. بعد خمس سنوات، نزل إلى ساحة الاحتفالات الوثنية في المدينة معلناً مسيحيته بشجاعة جندي باسل.",
+                cross: "حمل صليب الاعتراف العلني والعذاب المروع. تعرض مارمينا لأقسى أنواع العذابات: جلد بأعصاب البقر، ومشط جسده بأمشاط من حديد حتى ظهرت عظامه، ودلكت جراحه بأقمشة خشنة، وأحرق بالنار. احتمل كل هذا بشكر وتسبيح، رافضاً عروض الحاكم بالزواج من أميرات واستعادة منصبه العسكري، مفضلاً الموت من أجل المسيح حتى قطعت رأسه. وحمل أصدقاؤه جثمانه إلى صحراء مربوط بمصر بناءً على وصيته.",
+                impact: "فاقت شهرة مارمينا العجائبي حدود مصر لتصل إلى كل أنحاء العالم القديم. أظهر الله عجائب شفاء لا تُحصى من تراب قبره وماء بئره في مربوط. صار ديره (مدينة بومينا الرخامية) أكبر مزار سياحي وروحي ومستشفى عالمي في الشرق الأوسط، يقصده حجاج أوروبا وآسيا. وجدت قوارير مارمينا الفخارية التي كان الحجاج يأخذون فيها ماء البركة في حفريات بألمانيا، وفرنسا، وروما، والسودان، ليظل شفيعاً عالمياً تُبنى الكنائس على اسمه في كل القارات.",
+                quote: "«فَإِنِّي أُكْرِمُ الَّذِينَ يُكْرِمُونَنِي، وَالَّذِينَ يَحْتَقِرُونَنِي يَصْغُرُونَ.» (1 صم 2: 30)",
+                traits: [4, 6, 10, 5]
+            },
+
+            // الباب الرابع
+            {
+                id: 21,
+                name: "القديس الأنبا صموئيل المعترف",
+                title: "بطل الصمود ومقاوم الطومس وحامي العقيدة",
+                chapter: "الباب الرابع - شهداء ومعترفو الصمود وحفظ الهوية الأرثوذكسية",
+                bio: "ولد الأنبا صموئيل في أواخر القرن السادس الميلادي في مليج (منوفية). كان كاهناً وراهباً غيوراً في برية شيهيت. في عصر اتسم بالصراعات اللاهوتية ومحاولات فرض مقررات مجمع خلقيدونية بالقوة، برز الأنبا صموئيل كأحد أشرس المدافعين عن العقيدة الأرثوذكسية (عقيدة الطبيعة الواحدة للمسيح). ترأس دير القلمون بصحراء الفيوم، وقضى حياته مجاهداً لحفظ الإيمان المستقيم من الذوبان.",
+                cross: "واجه الأنبا صموئيل 'طومس لاون' الدخيل الذي حاول المقوقس (الحاكم والبطريرك الرومي) فرضه على الأقباط بالقوة. وقف صموئيل في الكنيسة ومزق الطومس علناً. هنا بدأ صليبه المرير؛ حيث تعرض للضرب المبرح من جنود المقوقس حتى فقئت عينه، وترك بين حي وميت وطرد من ديره. لم يتراجع، بل تعرض لاحقاً للأسر مرتين على يد البربر وتحمل سخرية وعذاب الآسرين في الصحراء، وعمل في رعاية الجمال وهو مقيد متمسكاً بصلواته ونسكه حتى أطلق سراحه بمعجزة.",
+                impact: "يمثل الأنبا صموئيل درع الهوية اللاهوتية القبطية وحائط الصد ضد الغزو الفكري والديني الذي حاول محو هوية كنيسة الإسكندرية. بصموده الأسطوري، ألهم الأجيال أن الكنيسة تُحفظ بالدم والعرق والتمسك بالمبادئ، لا بالمساومات السياسية. ديره العامر باقٍ حتى اليوم في صحراء القلمون شاهداً على أن الإيمان غير القابل للكسر هو الذي ينتصر في النهاية، مقدماً نموذجاً للمعترف الذي لا يهاب الموت.",
+                quote: "«لأَنَّهُ قَدْ وُهِبَ لَكُمْ لأَجْلِ الْمَسِيحِ لاَ أَنْ تُؤْمِنُوا بِهِ فَقَطْ، بَلْ أَيْضًا أَنْ تَتَأَلَّمُوا لأَجْلِهِ.» (في 1: 29)",
+                traits: [6, 6, 10, 4]
+            },
+            {
+                id: 22,
+                name: "القديسة دميانة والأربعين عذراء",
+                title: "البطولة النسائية ورائدة الرهبنة الجماعية النسائية",
+                chapter: "الباب الرابع - شهداء ومعترفو الصمود وحفظ الهوية الأرثوذكسية",
+                bio: "هي ابنة 'مرقس' والي إقليم البرلس والزعفران (بكفر الشيخ). كانت فتاة فائقة الجمال والثراء، لكن قلبها التهب بمحبة الملك السماوي فعشقت البتولية. بنى لها والدها قصراً خارج المدينة لتتعبد فيه، وانضمت إليها أربعون عذراء ليعشن حياة الصلاة والتكريس. حين ضعف والدها أمام تهديدات الإمبراطور دقلديانوس وبخر للأوثان، خرجت دميانة ووبخته بشدة مهددة إياه بالبراءة منه حتى تاب والدها وعاد ليعترف بالمسيح ونال الشهادة.",
+                cross: "غضب الإمبراطور فأرسل أميراً لثنيها عن إيمانها. هنا حملت دميانة وعذاراها صليب 'العذاب البشع المتواصل'. احتملت آلاماً تفوق الوصف: الاعتصار بالهنبازين (آلة عذاب)، السلخ، الحرق، ووضع الجير الحي على الجروح المفتوحة لأيام طويلة. كان الصليب مضاعفاً: ألم جسدها الممزق، وألم رؤية رفيقاتها يذبحن أمامها، فكانت تشجعهن وتثبتهن حتى نلن الأكاليل جميعاً قبل أن تقطع رأسها لتلحق بهن.",
+                impact: "تعد القديسة دميانة مؤسسة ورائدة لفكرة 'الرهبنة النسائية الجماعية' في العالم المسيحي والممزوجة بالاستشهاد. قدمت نموذجاً للمرأة القبطية القائدة والشجاعة، التي لا تخاف الحكام، بل وتثبت الكبار (والدها والوزراء) في إيمانهم. ديرها في بلقاس يُعد من أهم المزارات الروحية، وصارت قصتها أسطورة من البطولة والقداسة تُثبت أن قوة الروح القدس تعمل في العذارى الضعيفات ليخزين قوة الإمبراطوريات المسلحة.",
+                quote: "«الْمَرْأَةُ الْفَاضِلَةُ مَنْ يَجِدُهَا؟ لأَنَّ ثَمَنَهَا يَفُوقُ اللآلِئَ... الْحُسْنُ غَشٌّ وَالْجَمَالُ بَاطِلٌ، أَمَّا الْمَرْأَةُ الْمُتَّقِيَةُ الرَّبَّ فَهِيَ تُمْدَحُ.» (أم 31: 10، 30)",
+                traits: [4, 8, 10, 4]
+            },
+            {
+                id: 23,
+                name: "القديس أبانوب النهيسي",
+                title: "الشهيد الطفل ومثبت إيمان الكبار",
+                chapter: "الباب الرابع - شهداء ومعترفو الصمود وحفظ الهوية الأرثوذكسية",
+                bio: "ولد في قرية 'نهيسة' بمحافظة الغربية في القرن الرابع الميلادي لأبوين تقيين. فقد والديه وهو في الثانية عشرة من عمره. في هذه السن المبكرة، لم تغره أموال ميراثه بل دخل الكنيسة وسمع عظة عن الاستشهاد والأكاليل المعدة للمجاهدين. بقلب طفل وإيمان شيخ، قام ببيع كل ممتلكاته ووزعها على الفقراء، وانطلق إلى سمنود ليعترف بإيمانه المسيحي علانية أمام الوالي الروماني، متحدياً أوامر الإمبراطور دقلديانوس بعبادة الأوثان.",
+                cross: "حمل أبانوب صليب 'العذاب الجسد المروع في سن الطفولة'. استهان الوالي بصغر سنه وحاول إغراءه والهدايا، ولما رفض، تعرض لجلد قاسٍ وعُلق على صاري السفينة منكساً من سمنود إلى أتريب. تحمّل تقطيع أعضائه، وخروج أحشائه، والكي بالنار. كان صليبه هو 'الشهادة العملية الصامتة'؛ فبينما كان يُعذب، كان يصلي محتملاً الألم بابتسامة سماوية، مما أذهل الحشود الوثنية.",
+                impact: "صار القديس أبانوب أيقونة 'الطفولة المسيحية الشجاعة' في الكنيسة العالمية. شهادته لم تكن مجرد خلاص لنفسه بل كانت سبباً في إيمان آلاف الوثنيين الذين رأوا صموده (آمن بسببه أكثر من 8000 شخص). أثبت للعالم أن الإيمان الأرثوذكسي ليس فلسفة للكبار فقط، بل هو حياة وقوة تسكن في قلوب الأطفال وتمنحهم صلابة تفوق الجيوش. كنيسته في سمنود لا تزال حتى اليوم مقصداً لآلاف الزوار الذين يتلمسون بركة هذا الشهيد الطفل.",
+                quote: "«مِنْ أَفْوَاهِ الأَطْفَالِ وَالرُّكَّعِ أَسَّسْتَ حَمْدًا بِسَبَبِ أَضْدَادِكَ لِتَسْكِيتِ عَدُوٍّ وَمُنْتَقِمٍ.» (مز 8: 2)",
+                traits: [2, 4, 10, 3]
+            },
+            {
+                id: 24,
+                name: "القديس يوليوس الأقفهصي",
+                title: "كاتب سير الشهداء وحافظ التراث الأرثوذكسي",
+                chapter: "الباب الرابع - شهداء ومعترفو الصمود وحفظ الهوية الأرثوذكسية",
+                bio: "من أثرياء وشرفاء مدينة الإسكندرية (ولد في أقفهص بصعيد مصر). كان مقرباً من السلطة الرومانية ويحظى باحترام كبير في المجتمع، مما وفر له حصانة شبه كاملة في بداية عصر الاستشهاد. بدلاً من الهروب أو النجاة بنفسه، كرّس نفوذه، وأمواله، ومكانته الاجتماعية لخدمة المسيحيين المضطهدين. كوّن فريقاً ضخماً من الكتبة بلغ عددهم ثلاثمائة كاتب ووزعهم على جميع السجون ومقرات المحاكمات في مصر.",
+                cross: "حمل صليب 'البذل المادي والمخاطرة بالحياة'. كان يتسلل إلى السجون ليعزي الشهداء ويثبتهم، ويدفع الرشاوى الهائلة للحراس ليتمكن من تكفين أجساد الشهداء ودفنها بكرامة. استمر في هذا الجهاد الخفي حتى ظهر له السيد المسيح وأمره بأن يتقدم هو أيضاً لنيل إكليل الشهادة. اعترف بإيمانه أمام الوالي، وتحمل نفس العذابات التي كان يوثقها للآخرين ليختم جهاده بقطع رأسه.",
+                impact: "يدين التاريخ الكنسي العالمي للقديس يوليوس الأقفهصي بحفظ 'أعمال الشهداء' (السنكسار الأولي). لولا مشروعه التوثيقي العظيم، لضاعت سير آلاف الأبطال الذين سفكت دماؤهم في مصر. هو 'مؤسس علم التاريخ الكنسي التطبيقي'، قدم للعالم الدليل المكتوب والموثق على صمود الكنيسة القبطية، وصار شفيعاً للكتاب والباحثين، والمؤرخين المسيحيين.",
+                quote: "«الصِّدِّيقُ يَكُونُ لِذِكْرٍ أَبَدِيٍّ... لاَ يَخْشَى مِنْ خَبَرِ سُوءٍ. قَلْبُهُ ثَابِتٌ مُتَّكِلٌ عَلَى الرَّبِّ.» (مز 112: 6-7)",
+                traits: [7, 3, 7, 9]
+            },
+            {
+                id: 25,
+                name: "القديس إسحق الدفراوي",
+                title: "نور إقليم الغربية وشفيع المتمسكين بالرجاء",
+                chapter: "الباب الرابع - شهداء ومعترفو الصمود وحفظ الهوية الأرثوذكسية",
+                bio: "شاب تقي ولد في قرية 'دفرا' بمحافظة الغربية. نشأ في بيئة زراعية بسيطة، لكنه كان غنياً بالفضيلة ومحبة الله. ظهر له السيد المسيح في رؤيا معزياً ومقوياً، ومبشراً إياه بإكليل الشهادة. انطلق بشجاعة إلى الوالي الروماني في منطقة طوة (بالغربية) وأعلن إيمانه المسيحي بكل جرأة، رافضاً الخضوع للمراسيم الوثنية، ومفنداً ضلال عبادة الأصنام أمام الحشود المترقبة.",
+                cross: "حمل صليب 'العذاب والإصرار على الحق'. تعرض لاضطهاد عنيف؛ حيث تم جلده بوحشية وتكسير عظامه، وإلقاؤه في أتون نار مشتعل، لكن العناية الإلهية كانت تنقذه مراراً ليقف مجدداً ويشهد للمسيح. تمثل صليبه الأكبر في الصبر على سلسلة طويلة ومستمرة من المحاكمات والتعذيب المتنقل بين الولاة، حتى نال إكليل الشهادة بقطع رأسه، مختتماً مسيرة من الألم الممزوج بالرجاء الفرح.",
+                impact: "يُعد القديس إسحق الدفراوي نموذجاً مشرفاً لشهداء الأقاليم المصرية الذين لم يكونوا أساقفة أو لاهوتيين، بل شباباً بسطاء أظهروا وعياً عقيدياً صلباً. قدموا شهادة حية بأن المسيحية القبطية متجذرة في طينة الفلاحين كما هي متجذرة في عقول فلاسفة الإسكندرية. كنيسته في 'دفرا' لا تزال مركزاً للإشعاع الروحي، وقصته تلهم البسطاء بأن الله يختار ضعفاء العالم ليخزي بهم الأقوياء.",
+                quote: "«لأَنَّ خِفَّةَ ضِيقَتِنَا الْوَقْتِيَّةَ تُنْشِئُ لَنَا أَكْثَرَ فَأَكْثَرَ ثِقَلَ مَجْدٍ أَبَدِيًّا.» (2 كو 4: 17)",
+                traits: [4, 4, 9, 5]
+            },
+
+            // الباب الخامس
+            {
+                id: 26,
+                name: "القديس الأنبا أبرآم أسقف الفيوم",
+                title: "أبو الفقراء وأيقونة العطاء المتجرد",
+                chapter: "الباب الخامس - أراخنة وقمم روحية ودبلوماسية حديثة والمعاصرة",
+                bio: "هو بولس غبريال، ولد عام 1829م في قرية 'جلدام' بالمنيا. ترهب في دير السيدة العذراء (المحرق). عُرف بنسكه الشديد وحبه الجارف للفقراء والمحتاجين، حتى أنه كان يوزع كل أموال الدير عليهم، مما أثار حفيظة بعض الرهبان ودفعهم لطلب إبعاده. اختاره البابا كيرلس الخامس أسقفاً للفيوم والجيزة عام 1881م. حوّل دار المطرانية إلى مائدة مفتوحة ومأوى مستمر للمساكين دون تمييز بين مسيحي ومسلم.",
+                cross: "حمل صليب 'الفقر الاختياري والعطاء حتى الإعواز'. كان يعيش في تقشف تام، يرتدي ملابس بسيطة وتنازل عن مظاهر الأبهة الأسقفية. واجه صليب 'الاستهزاء والانتقاد' من بعض رجال الإدارة بسبب إفراطه في العطاء وعدم ادخاره لأي أموال للكنيسة، لكنه كان متمسكاً بأن خزينة الكنيسة الحقيقية هي بطون الجياع. تفرغ للصلاة وحمل هموم المرضى والمكروبين حتى وهبه الله موهبة شفاء الأمراض البارزة.",
+                impact: "يُعتبر الأنبا أبرآم في الكنيسة المعاصرة 'فرانسيس الأسيزي' الشرق. ضرب للعالم أروع مثال في 'الاشتراكية المسيحية' والمحبة العملية. قصصه مع الفقراء تُدرس اليوم كمنهج في العطاء والثقة المطلقة في العناية الإلهية. اعترف به المجمع المقدس قديساً عام 1964م، وأصبح مزارُه بالفيوم قبلة للآلاف من مصر وخارجها، ليثبت أن أقصر طريق لقلب الله يمر حتماً بأيدي الفقراء.",
+                quote: "«طُوبَى لِلَّذِي يَنْظُرُ إِلَى الْمِسْكِينِ. فِي يَوْمِ الشَّرِّ يُنَجِّيهِ الرَّبُّ.» (مز 41: 1)",
+                traits: [3, 6, 4, 10]
+            },
+            {
+                id: 27,
+                name: "الأرشيدياكون حبيب جرجس",
+                title: "قديس التعليم ومؤسس مدارس الأحد",
+                chapter: "الباب الخامس - أراخنة وقمم روحية ودبلوماسية حديثة والمعاصرة",
+                bio: "ولد عام 1876م. في وقت كانت فيه الكنيسة القبطية تعاني من ضعف التعليم وتدهور مستوى المعرفة الدينية، نهض هذا الشاب العلماني ليقود ثورة تعليمية شاملة. التحق بالكلية الإكليريكية في أول عهدها، وسرعان ما صار مديرها. أدرك أن إنقاذ الكنيسة يبدأ من الأطفال والشباب، فأسس حركة 'مدارس الأحد' عام 1918م. عمل كأستاذ للاهوت وأعد أجيالاً من الكهنة والأساقفة.",
+                cross: "حمل صليب 'الجهاد التعليمي ومحاربة الجهل الفكري'. واجه مقاومة شرسة من بعض رجال الإكليروس القدامى الذين رفضوا التجديد ورأوا في مدارس الأحد بدعة. جاب محافظات مصر من شمالها لجنوبها، أحياناً على ظهور الدواب، ليؤسس فصولاً دراسية، ويطبع الكتب والمناهج على نفقته الخاصة. أنفق عمره كله في العمل المستمر الذي لا يهدأ، رافضاً الزواج ليتفرغ تماماً لعروسه الوحيدة: الكنيسة.",
+                impact: "أنقذ حبيب جرجس الهوية القبطية الأرثوذكسية من الذوبان أمام الإرساليات الأجنبية التي اجتاحت مصر في تلك الفترة. من عباءة مدارسه الإكليريكية ومدارس الأحد، خرجت القامات الكبرى للكنيسة المعاصرة وعلى رأسهم البابا شنودة الثالث. اعترفت به الكنيسة قديساً ليكون أيقونة للـ 'الخادم العلماني' الذي غيّر مجرى التاريخ الكنسي بقوة القلم، والمنهج، والغيرة المقدسة، مقدماً نموذجاً عالمياً للنهضة التعليمية.",
+                quote: "«وَالْفَاهِمُونَ يَضِيئُونَ كَضِيَاءِ الْجَلَدِ، وَالَّذِينَ رَدُّوا كَثِيرِينَ إِلَى الْبِرِّ كَالْكَوَاكِبِ إِلَى أَبَدِ الدَّهُورِ.» (دا 12: 3)",
+                traits: [9, 5, 5, 8]
+            },
+            {
+                id: 28,
+                name: "القديس البابا كيرلس السادس",
+                title: "البابا الـ 116 - رجل الصلاة والقداسات اليومية",
+                chapter: "الباب الخامس - أراخنة وقمم روحية ودبلوماسية حديثة والمعاصرة",
+                bio: "هو عازر يوسف عطا، ولد عام 1902م. ترهب باسم 'مينا البراموسي المتوحد'. عشق العزلة والصلاة الدائمة، فاتخذ من 'طاحونة هواء' مهجورة في جبل المقطم ومصر القديمة مقراً لنسكه. اختارته العناية الإلهية بالقرعة الهيكلية ليصبح البطريرك الـ 116 للكنيسة القبطية عام 1959م. في عهده شهدت الكنيسة نهضة روحية هائلة، وعودة لرفات القديس مرقس، وتجلي السيدة العذراء في الزيتون (1968م).",
+                cross: "حمل البابا كيرلس صليب 'حمل آلام الشعب بالصلاة المستمرة'. كان يقيم القداس الإلهي يومياً فجراً، وهو صليب جسدي وروحي مرهق يتطلب انسحاقاً وتفرغاً كاملين. واجه حروباً شيطانية عنيفة أثناء توحده في الطاحونة. وكبطريرك، حمل أثقال الكنيسة في فترة سياسية حرجة، ولم يواجه المشاكل بالقرارات الإدارية، بل كان يضعها حرفياً على المذبح ويبكي أمام الله حتى تُحل المعضلات بقوة علوية.",
+                impact: "أعاد البابا كيرلس للكنيسة صورتها المشرقة كـ 'كنيسة مصلية وعجائبية'. امتدت علاقاته الدبلوماسية لتشمل إمبراطور إثيوبيا والرئيس جمال عبد الناصر، مقدماً نموذجاً للبطريرك الروحاني الذي يُحترم من كبار قادة العالم بسبب نقاء قلبه لا دهاء عقله. اعترف به المجمع المقدس قديساً عام 2013م، ولا تزال معجزاته وشفاعته تختبر بشكل يومي في حياة الملايين من الأقباط وغير الأقباط حول العالم.",
+                quote: "«وَأَمَّا أَنَا فَصَلاَةٌ.» (مز 109: 4) / «صَلُّوا بِلاَ انْقِطَاعٍ.» (1 تس 5: 17)",
+                traits: [4, 10, 4, 6]
+            },
+            {
+                id: 29,
+                name: "القديس البابا شنودة الثالث",
+                title: "البابا الـ 117 - معلم الأجيال وسفير الكنيسة دولياً",
+                chapter: "الباب الخامس - أراخنة وقمم روحية ودبلوماسية حديثة والمعاصرة",
+                bio: "هو نظير جيد، ولد عام 1923م. ترهب باسم 'أنطونيوس السرياني'. صار أول أسقف للتعليم في تاريخ الكنيسة، ثم تُوج كالبطريرك الـ 117 عام 1971م، وقاد الكنيسة لأكثر من أربعين عاماً. كان شاعراً، وصحفياً، ولاهوتياً فذاً وعالماً في الكتاب المقدس. شهد عصره أكبر توسع جغرافي للكنيسة القبطية خارج مصر لتشمل كافة قارات العالم.",
+                cross: "حمل صليب 'القيادة في أزمنة العواصف'. قاد سفينة الكنيسة وسط أحداث طائفية وسياسية عاصفة، وتحمل صليب النفي وتحديد الإقامة في دير الأنبا بيشوي عام 1981م بصبر وشكر لأكثر من ثلاث سنوات حيث قال كلمته الشهيرة: 'إنها خلوة روحية'. حمل عبء الدفاع عن العقيدة ضد الهرطقات الحديثة، وكان يتحمل يومياً آلام رعاية الملايين ساهراً على الرد على تساؤلاتهم عبر عظته الأسبوعية التاريخية.",
+                impact: "أخرج البابا شنودة الكنيسة القبطية من المحلية إلى العالمية. أسس مئات الكنائس وعشرات الأديرة في أمريكا وأوروبا، وأستراليا، وأفريقيا. كان صوتاً مسيحياً ووطنياً وعربياً مسموعاً في المحافل الدولية (خاصة موقفه من القضية الفلسطينية). ترك تراثاً لاهوتياً وأدبياً يقدر بأكثر من 150 كتاباً تُرجمت للغات عديدة، وصار رمزاً للحكمة والصلابة، حتى لقب بـ 'معلم الأجيال' و'ذهبي الفم' العصر الحديث.",
+                quote: "«قَدْ جَاهَدْتُ الْجِهَادَ الْحَسَنَ، أَكْمَلْتُ السَّعْيَ، حَفِظْتُ الإِيمَانَ، وَأَخِيرًا قَدْ وُضِعَ لِي إِكْلِيلُ الْبِرِّ» (2 تم 4: 7-8)",
+                traits: [10, 5, 7, 7]
+            },
+            {
+                id: 30,
+                name: "القمص بيشوي كامل",
+                title: "رائد الخدمة الحديثة وحامل صليب المرض بفرح",
+                chapter: "الباب الخامس - أراخنة وقمم روحية ودبلوماسية حديثة والمعاصرة",
+                bio: "هو سامي كامل، ولد عام 1931م. حصل على عدة درجات جامعية وعمل بالتدريس. رسمه البابا كيرلس السادس كاهناً على كنيسة مارجرجس بسبورتنج بالإسكندرية عام 1959م، ليكون أول كاهن جامعي في الإسكندرية. أسس نهضة رعوية شاملة، واهتم بالشباب والطفولة، وتأسيس الحضانات الكنسية. أرسل للخارج فكان أول كاهن قبطي يؤسس كنيسة في لوس أنجلوس بأمريكا، واضعاً حجر الأساس لكنائس المهجر.",
+                cross: "حمل أبونا بيشوي صليباً مركباً: صليب الخدمة الباذلة بلا راحة حتى تآكل جسده، وصليب 'المرض العضال'. أصيب بمرض السرطان الذي نهش جسده، ورغم الآلام المبرحة التي كان يعانيها، لم يتوقف عن الصلاة أو الخدمة، بل اعتبر السرطان 'صديقاً' وهدية من الله لمشاركته آلام الصلب. كان يتهلل في ألمه، ويرفض المسكنات القوية ليظل في كامل وعيه مصلياً، مقدماً نموذجاً حياً لاحتمال الألم بشكر.",
+                impact: "يُعد أبونا بيشوي كامل 'أيقونة الكاهن الرعوي الحديث'. كتاباته عن الصليب ('الصليب في المسيحية') صارت مراجع روحية. علم الكنيسة أن الألم ليس عقوبة بل هو شركة حب مع المسيح المتألم. أثرت روحه الخادمة في تأسيس نهضة كنائس المهجر، وصار نموذجاً عالمياً يُحتذى به في التفاني الرعوي وعمل الرحمة الخفي، وتم الاعتراف بقداسته مؤخراً ليضاف إلى سحابة الشهود القبطية.",
+                quote: "«الَّذِي الآنَ أَفْرَحُ فِي آلَامِي لأَجْلِكُمْ، وَأُكَمِّلُ نَقَائِصَ شَدَائِدِ الْمَسِيحِ فِي لَحْمِي لأَجْلِ جَسَدِهِ الَّذِي هُوَ الْكَنِيسَةُ.» (كو 1: 24)",
+                traits: [6, 6, 5, 9]
+            },
+            {
+                id: 31,
+                name: "الشهيد نبيل حبيب",
+                title: "نموذج معاصر لحراس أبواب الكنيسة وبذل الذات",
+                chapter: "الباب الخامس - أراخنة وقمم روحية ودبلوماسية حديثة والمعاصرة",
+                bio: "يمثل هذا الشهيد (ونظائره من أمثال الشهيد نسيم فهيم وغيرهم) فئة 'الجنود المجهولين' في الكنيسة المعاصرة. نبيل حبيب كان حارساً بسيطاً وخادماً للكنيسة البطرسية بالقاهرة (استشهد في ديسمبر 2016). كان رجلاً محباً لله، يقضي وقته في خدمة المصلين وتأمين أبواب الكنيسة بابتسامة وترحاب. هؤلاء الحراس والخدام لا يحملون درجات لاهوتية، لكنهم يحملون قلوباً تفوق في محبتها الكثيرين.",
+                cross: "حمل صليب 'اليقظة والتضحية بالذات'. في لحظة غادرة، اشتبه في شخص غريب يحاول اقتحام الكنيسة أثناء القداس الإلهي، فلم يهرب أو يتردد بل تقدم بخطوات ثابتة ليعترض طريق الانتحاري حاملاً حزاماً ناسفاً. احتضن الموت بجسده ليفدي مئات المصلين بالداخل. تمزق جسده وتحول إلى أشلاء، دافعاً ثمن حراسة بيت الله بدمه مختاراً الموت بشجاعة منقطعة النظير.",
+                impact: "قدم هؤلاء الشهداء المعاصرون للعالم رسالة مفادها أن 'عصر الاستشهاد لم ولن ينتهي في الكنيسة القبطية'. أظهروا للإنسانية أن الحب المسيحي العملي يصل إلى حد فداء الآخرين بالجسد (بذل الذات). أبكت قصصهم العالم، وأثبتت أن حراس الكنائس في مصر ليسوا مجرد موظفين أمن، بل هم مشاريع شهداء يقفون على أبواب السماء متممين وصية المسيح العظمى في الحب.",
+                quote: "«لَيْسَ لأَحَدٍ حُبٌّ أَعْظَمُ مِنْ هَذَا: أَنْ يَضَعَ أَحَدٌ نَفْسَهُ لأَجْلِ أَحِبَّائِهِ.» (يو 15: 13)",
+                traits: [2, 3, 10, 8]
+            },
+            {
+                id: 32,
+                name: "شهداء ليبيا الـ 21",
+                title: "أبطال الثبات المعاصر وأيقونة الإيمان العالمي",
+                chapter: "الباب الخامس - أراخنة وقمم روحية ودبلوماسية حديثة والمعاصرة",
+                bio: "هم 20 شاباً قبطياً من قرى بسيطة بمحافظة المنيا ومعهم شهيد غاني يدعى (ماثيو). سافروا إلى ليبيا سعياً وراء الرزق لإعالة أسرهم. اختطفوا على يد تنظيم داعش الإرهابي عام 2015م. كانوا عمالاً بسطاء، لم يدرسوا اللاهوت والفلسفة، ولكنهم تشربوا الإيمان الأرثوذكسي النقي من أمهاتهم ومن ليتورجية الكنيسة.",
+                cross: "حملوا صليب 'الرعب النفسي والإعدام الوحشي'. مكثوا في الأسر لأسابيع تحت التهديد والتعذيب لإنكار إيمانهم. وفي مشهد مهيب على ساحل البحر، سيقوا في ملابس الإعدام البرتقالية مقيدي الأيدي خلف ظهورهم. لم يهتزوا، ولم يصرخوا برعب، بل كانت شفاههم تتحرك بهدوء مصلية: 'يا ربي يسوع المسيح'. فصلت رؤوسهم عن أجسادهم بوحشية فاختلطت دماؤهم بمياه البحر، معلنين انتصار الروح على سيف الجلاد.",
+                impact: "صدم ثباتهم العالم أجمع، وغيرت نظرة الإنسانية للمسيحية في الشرق. أثبتوا أن الكنيسة القبطية مصنع للأبطال في كل الأجيال. أدرجت أسماؤهم في السنكسار القبطي، واعترف بهم البابا فرنسيس بابا الفاتيكان كشهداء في الكنيسة الكاثوليكية أيضاً (في سابقة تاريخية). صاروا أيقونة عالمية للصمود، وبنيت لهم كنيسة 'شهداء الإيمان والوطن' في قريتهم العور لتكون مزاراً عالمياً يشهد لقوة اسم يسوع.",
+                quote: "«وَهُمْ غَلَبُوهُ بِدَمِ الْخَرُوفِ وَبِكَلِمَةِ شَهَادَتِهِمْ، وَلَمْ يُحِبُّوا حَيَاتَهُمْ حَتَّى الْمَوْتِ.» (رؤ 12: 11)",
+                traits: [2, 5, 10, 3]
+            },
+            {
+                id: 33,
+                name: "القديس الأنبا يوساب الأبح",
+                title: "أسقف جرجا وعالم اللاهوت وحارس العقيدة",
+                chapter: "الباب الخامس - أراخنة وقمم روحية ودبلوماسية حديثة والمعاصرة",
+                bio: "ولد في بلدة النخيلة (أسيوط) عام 1735م. ترهب بدير الأنبا أنطونيوس. عُرف بغزارة علمه وتبحره في الكتاب المقدس وتفاسير الآباء. رسم أسقفاً على كرسي جرجا وأخميم. سمي بـ 'الأبح' نظراً لمرض ألم بحنجرته فجعل صوته مبحوحاً، لكن هذا الصوت المبحوح كان يزأر بالحق كعاصفة. كان صديقاً مقرباً للبابا يوأنس الـ 18، وعاونه في ضبط الأمور الرعوية.",
+                cross: "حمل الأنبا يوساب صليب 'الدفاع اللاهوتي الشرس ضد الاختراق العقيدي'. في عصره نشطت الإرساليات الغربية في صعيد مصر لمحاولة جذب الأقباط وتغيير هويتهم الأرثوذكسية مستغلين الفقر والجهل. تصدى لهم الأنبا يوساب بكتاباته العميقة وعظاته القوية الدامغة. عانى من الإرهاق المستمر في الطواف على القرى لتثبيت المؤمنين واحتمل صليب صوته المبحوح والضعف الجسدي ليصون رعية المسيح من الذئاب الخاطفة.",
+                impact: "ترك الأنبا يوساب إرثاً لاهوتياً قيماً مثل كتاب ('سلاح المؤمنين')، ويُعد من أهم لاهوتيي الكنيسة في القرون المتأخرة. حفظ لمصر وصعيدها هويته الأرثوذكسية الصافية في وقت كادت فيه الإغراءات الخارجية أن تمحو هذا الإرث. قدم للعالم صورة الأسقف العالم الذي لا يهادن في حقائق الإيمان، والذي يقارع الحجة بالحجة بقوة الروح القدس.",
+                quote: "«لاَحِظْ نَفْسَكَ وَالتَّعْلِيمَ وَدَاوِمْ عَلَى ذلِكَ، لأَنَّكَ إِذَا فَعَلْتَ هَذَا، تُخَلِّصُ نَفْسَكَ وَالَّذِينَ يَسْمَعُونَكَ أَيْضًا.» (1 تي 4: 16)",
+                traits: [9, 5, 7, 5]
+            },
+            {
+                id: 34,
+                name: "المعلم سعيد بن كاتب الفرغاني",
+                title: "المهندس العبقري ومنقذ الكنائس",
+                chapter: "الباب الخامس - أراخنة وقمم روحية ودبلوماسية حديثة والمعاصرة",
+                bio: "هو مهندس وعالم عمارة مسيحي قبطي فذ، عاش في مصر في القرن التاسع الميلادي خلال العصر الطولوني. برز اسمه كأحد أعظم المعماريين في تاريخ مصر. أسند إليه أحمد بن طولون بناء 'مقياس النيل' بالروضة (عام 864م) لضبط حسابات الزراعة والضرائب، فأنجزه ببراعة هندسية غير سبوقة. عُرف عنه الذكاء الحاد والتمكن من علوم الرياضيات والهندسة. ورغم كفاءته، تعرض لظلم شديد ومكائد من حاشية الحاكم أدت إلى إلقائه في السجن.",
+                cross: "حمل المعلم سعيد صليب 'الظلم والجحود، والدفاع عن مقدسات الكنيسة'. فبعد أن بنى مقياس النيل، لم يُكافأ بل سُجن. وفي تلك الأثناء، أراد ابن طولون بناء جامعه الكبير، وأخبروه أنه يحتاج إلى 300 عمود من الرخام، ولن يتوفر هذا العدد إلا بهدم عدد كبير من الكنائس القبطية واقتلاع أعمدتها. من داخل زنزانته المظلمة نسي سعيد ألمه الشخصي وحمل هم الكنيسة، فأرسل للحاكم يخبره أنه قادر على بناء المسجد بدون عمود واحد (باستخدام الدعامات المبنية بالآجر والقباب)، فأنقذ بذلك كنائس مصر من دمار محقق، محتملاً قسوة السجن وخطر الفشل لينقذ بيوت الله.",
+                impact: "سجل هذا الأركون القبطي باسمه 'جامع أحمد بن طولون' الذي يُعد من أعظم التحف المعمارية الإسلامية في العالم حتى اليوم. قدم للعالم (ولأوروبا لاحقاً) ابتكار 'العقد المدبب' (Pointed Arch) قبل أن يُعرف في العمارة القوطية الأوروبية بقرنين. ترك رسالة للبشرية أن الخادم الأرثوذكسي يبني ويعمر وطنه حتى وهو تحت نير الظلم، وأن العقل المستنير بنعمة الله قادر على تحويل المحنة والسجن إلى فرصة للإبداع وحماية الهوية والتراث من الاندثار.",
+                quote: "«إِلَهُ السَّمَاءِ يُعْطِينَا النَّجَاحَ، وَنَحْنُ عَبِيدُهُ نَقُومُ وَنَبْنِي.» (نح 2: 20)",
+                traits: [9, 3, 6, 8]
+            },
+            {
+                id: 35,
+                name: "المعلم إبراهيم الجوهري",
+                title: "أركون الكنيسة ورئيس وزراء مصر ومعمر الأديرة",
+                chapter: "الباب الخامس - أراخنة وقمم روحية ودبلوماسية حديثة والمعاصرة",
+                bio: "ولد في القرن الثامن عشر لأسرة فقيرة بمدينة قليوب. تميز بنبوغ غير عادي في الحسابات والكتابة وإجادة اللغتين القبطية والعربية. تدرج في المناصب الحكومية بفضل أمانته وذكائه حتى وصل إلى منصب 'رئيس كتاب مصر' (ما يعادل رئيس الوزراء حالياً) في عهد المماليك. ورغم ثرائه الفاحش وسلطانه الواسع، ظل قلبه متضعاً ومتمسكاً بحياة التقوى الكنسية.",
+                cross: "لم يحمل المعلم إبراهيم صليب الفقر، بل حمل صليب 'السلطة والمسؤولية القومية والكنسية في أزمنة الاستبداد'. استخدم منصبه لإصدار فتاوى وفرمانات لبناء وترميم الكنائس والأديرة التي كانت مهدمة بسبب التعصب. كما تجرع أقصى أنواع الألم النفسي حين توفي ابنه الشاب 'يوسف' وهو في قمة مجده، فتقبل التجربة بشكر عجيب، وقام بتوزيع تعزيات ابنه كصدقات للفقراء، وحول حزنه إلى طاقة لتعمير وتجديد الكنائس.",
+                impact: "يُعد المعلم إبراهيم الجوهري (سلطان الأقباط) أيقونة تاريخية لـ 'الأركون المسيحي' أو العلماني صاحب السلطان الذي يُسخر كل نفوذه لخدمة الله والوطن. دعم استمرارية الحياة الرهبانية بتوفير أوقاف ومحاصيل للأديرة، وقدم الكنيسة القبطية أمام الحكام المسلمين في أبهى صور الأمانة والوطنية. نقش اسمه بحروف من نور في تاريخ مصر القومي والتاريخ الكنسي معاً.",
+                quote: "«وَكُلُّ مَنْ أُعْطِيَ كَثِيرًا يُطْلَبُ مِنْهُ كَثِيرٌ، وَمَنْ يُودِعُونَهُ كَثِيرًا يُطَالِبُونَهُ بِأَكْثَرَ.» (لو 12: 48)",
+                traits: [5, 4, 5, 10]
+            },
+            {
+                id: 36,
+                name: "المعلم جرجس الجوهري",
+                title: "مهندس العلاقات الدولية وحامي الشعب القبطي",
+                chapter: "الباب الخامس - أراخنة وقمم روحية ودبلوماسية حديثة والمعاصرة",
+                bio: "هو الشقيق الأصغر للمعلم إبراهيم الجوهري. تولى نفس المنصب الرفيع (رئاسة دواوين مصر) بعد نياحة أخيه. عاصر فترة من أخطر فترات التاريخ المصري، حيث تزامنت إدارته مع دخول الحملة الفرنسية بقيادة نابليون بونابرت إلى مصر، ثم خروجهم وعودة المماليك والعثمانيين وصولاً إلى بدايات عصر محمد علي باشا. كان سياسياً داهية ومسيحياً تقياً في آن واحد.",
+                cross: "حمل المعلم جرجس صليب 'المشي على الأشواك السياسية لحماية شعبه'. كان صليبه هو الضغط النفسي الهائل ومسؤولية الحفاظ على أرواح المسيحيين من المذابح الانتقامية وسط تبدل الحكام المستمر بين الفرنسيين والمماليك والترك. تعرض للابتزاز المالي، ومصادرة أمواله، بل والتهديد بالقتل ونفيه المؤقت. لكنه ظل ثابتاً محتملاً الإهانات والخسارة المادية الطائلة لكي يشتري سلام الكنيسة وحياة بسطاء الأقباط.",
+                impact: "أثبت المعلم جرجس أن الدبلوماسية المسيحية يمكن أن تكون طوق نجاة في أوقات الفتن. تعامل مع نابليون بونابرت بندية واحترام، وحافظ على النسيج الوطني المصري من التمزق. استكمل مسيرة أخيه في خدمة الأديرة ورعاية الفقراء، مقدماً نموذجاً عالمياً للقيادة في أوقات الأزمات (Crisis Management)، حيث وضع مصلحة الكنيسة والوطن فوق أي اعتبار شخصي أو مادي.",
+                quote: "«هَا أَنَا أُرْسِلُكُمْ كَغَنَمٍ فِي وَسَطِ ذِئَابٍ، فَكُونُوا حُكَمَاءَ كَالْحَيَّاتِ وَبُسَطَاءَ كَالْحَمَامِ.» (مت 10: 16)",
+                traits: [6, 3, 6, 9]
+            },
+            {
+                id: 37,
+                name: "الأم إيريني",
+                title: "رائدة النهضة الرهبانية النسائية المعاصرة وشهيدة المرض",
+                chapter: "الباب الخامس - أراخنة وقمم روحية ودبلوماسية حديثة والمعاصرة",
+                bio: "هي فوزية يسى خلة، ولدت عام 1936م في جرجا. عشقت حياة الرهبنة منذ صباها المبكر وذهبت لدير الشهيد العظيم أبي سيفين بمصر القديمة. رسمت راهبة عام 1954م، وبعدها بسنوات قليلة، ونظراً لروحانيتها الفائقة وحكمتها تمت سيامتها رئيسة للدير وهي في الـ 26 من عمرها. قادت الدير لأكثر من أربعين عاماً، وأحدثت نهضة عمرانية وروحية غير سبوقة في الرهبنة النسائية الحديثة.",
+                cross: "حملت الأم إيريني أثقل صلبان المرض الجسدي الذي يمكن لبشر احتماله. عانت من سرطانات متعددة، ومشاكل خطيرة في القلب، وخضعت لأكثر من 27 عملية جراحية كبرى وجلطات، وبتر لأجزاء من جسدها. ومع ذلك، كان صليبها مزيناً بالتهليل الدائم؛ فكانت تدير الدير وتتابع أحوال الراهبات وآلاف الزوار وهي على فراش المرض القاسي مختبرة درجات روحية فائقة من الاختطاف الروحي ورؤية القديسين.",
+                impact: "نقلت الأم إيريني صورة 'الرهبنة النسائية الأرثوذكسية' إلى آفاق عالمية حديثة. جعلت من دير أبي سيفين منارة روحية يزورها الأقباط والأجانب. كتاباتها وسيرتها كشفت عن أسرار روحية عميقة ومفاهيم حديثة للتعامل مع الألم، لتؤكد للعالم المادي أن الروح القدس لا يزال يعمل بقوة المعجزات في القرن العشرين والحادي والعشرين، وأن الراهبة القبطية تستطيع أن تبلغ قامة آباء البرية العظام (حياة السواح).",
+                quote: "«فَقَالَ لِي: تَكْفِيكَ نِعْمَتِي، لأَنَّ قُوَّتِي فِي الضَّعْفِ تُكْمَلُ. فَبِكُلِّ سُرُورٍ أَفْتَخِرُ بِالْحَرِيِّ فِي ضَعَفَاتِي، لِكَيْ تَحِلَّ عَلَيَّ قُوَّةُ الْمَسِيحِ.» (2 كو 12: 9)",
+                traits: [5, 9, 6, 6]
+            }
+        ];
+
+        // الأسئلة الـ 12 ونظام توزيع النقاط [الحكمة، النسك، الشجاعة، العطاء]
+        const quizQuestions = [
+            {
+                title: "1. عندما تواجه تجربة أو أزمة كبرى في حياتك، ما هي أول ردة فعل تصدر منك؟",
+                options: [
+                    { text: "ألجأ للصلاة والهدوء والاعتزال حتى يصفو ذهني وأستمد قوتي من الله.", weights: [0, 3, 0, 1] },
+                    { text: "أحلل المشكلة بعقلانية، وأبحث عن كتب أو استشارات علمية ومنطقية.", weights: [3, 0, 1, 0] },
+                    { text: "أقف بشجاعة وصمود لمواجهة المشكلة مباشرة بدون خوف أو مساومة.", weights: [0, 1, 3, 0] },
+                    { text: "أفرغ طاقتي في خدمة ومساعدة الآخرين لخلق رجاء وأمل جديد.", weights: [0, 0, 1, 3] }
+                ]
+            },
+            {
+                title: "2. ما هي الفضيلة الأقرب إلى قلبك والتي تسعى باستمرار لتمثلها في سلوكك؟",
+                title: "2. ما هي الفضيلة الأقرب إلى قلبك والتي تسعى باستمرار لتمثلها في سلوكك؟",
+                options: [
+                    { text: "النسك والتواضع العميق والإنكار الكامل للذات ومجد العالم.", weights: [0, 3, 0, 0] },
+                    { text: "الدفاع عن الحق والتمسك بالعقيدة والمبادئ مهما كان الثمن.", weights: [1, 0, 3, 0] },
+                    { text: "المحبة الباذلة والعطاء للفقراء والمحتاجين دون مقابل.", weights: [0, 0, 0, 3] },
+                    { text: "البحث عن الحكمة، التعليم المستنير، ونشر المعرفة المصلحة.", weights: [3, 0, 0, 0] }
+                ]
+            },
+            {
+                title: "3. إذا أتيحت لك فرصة للمساهمة في خدمة مجتمعك أو كنيستك، أي مجال تختار؟",
+                options: [
+                    { text: "التعليم، إعداد المناهج والكتب، وتدريس الأجيال الجديدة.", weights: [3, 0, 0, 1] },
+                    { text: "خدمة الرعاية الاجتماعية وتأمين احتياجات الفقراء والمساكين.", weights: [0, 0, 1, 3] },
+                    { text: "حماية المظلومين والوقوف كدرع صامد أمام التحديات والاضطهاد.", weights: [1, 0, 3, 0] },
+                    { text: "التفرغ للعبادة والتأمل الصامت وبناء بيئة روحية هادئة.", weights: [0, 3, 0, 0] }
+                ]
+            },
+            {
+                title: "4. كيف تتعامل مع الأشخاص الذين يسيئون إليك أو يختلفون معك؟",
+                options: [
+                    { text: "بالصمت والصبر والتغاضي عن أخطائهم ومحبتهم بلا شروط.", weights: [0, 3, 0, 1] },
+                    { text: "بالمواجهة الصريحة بالحق الحاسم ودحض الأكاذيب بلا خوف.", weights: [2, 0, 2, 0] },
+                    { text: "بالحكمة والدبلوماسية لبناء جسور ومحاولة كسبهم بالحسنى.", weights: [2, 0, 0, 2] },
+                    { text: "بالعمل الإيجابي والمحبة الفعالة التي تخزي الشر بالخير.", weights: [0, 1, 0, 3] }
+                ]
+            },
+            {
+                title: "5. ما هو الجو أو البيئة التي تجد فيها راحة نفسك وتجدد روحك؟",
+                options: [
+                    { text: "البرية، الهدوء، الطبيعة، والأماكن الخالية من الصخب.", weights: [0, 3, 0, 0] },
+                    { text: "المكتبات، أروقة البحث الفكري، وقراءة الكتب العميقة.", weights: [3, 0, 0, 0] },
+                    { text: "وسط الجمع والكنيسة والخدمة والمشروعات الجماعية.", weights: [1, 0, 1, 2] },
+                    { text: "ميادين العمل والتحدي وتقديم الرعاية للمحتاجين والمرضى.", weights: [0, 0, 1, 3] }
+                ]
+            },
+            {
+                title: "6. عندما ترى ظلماً أو تعدياً على حقوق الآخرين، كيف تكون ردة فعلك؟",
+                options: [
+                    { text: "أقف صامداً ضد الظلم وأتصدى له جهاراً مهما كانت المخاطر.", weights: [0, 1, 3, 0] },
+                    { text: "أستخدم قلمي وعقلي وحكمتي لإثبات الحق وتوثيقه.", weights: [3, 0, 1, 0] },
+                    { text: "أبادر فوراً بتقديم الحماية والرعاية والملجأ للضحايا.", weights: [0, 0, 1, 3] },
+                    { text: "أتحمل في صمت وأصلي بلجاجة لكي يتدخل الله وينقذهم.", weights: [0, 3, 0, 1] }
+                ]
+            },
+            {
+                title: "7. ما هو الأثر الأكبر الذي تتمنى أن تتركه في حياة من حولك؟",
+                options: [
+                    { text: "أكون سبب رجاء وتوبة لكل شخص يائس أو ضائع.", weights: [1, 2, 0, 1] },
+                    { text: "أكون معلماً ومصلحاً ينير العقول ويرسخ المبادئ الصحيحة.", weights: [3, 0, 1, 0] },
+                    { text: "أكون بلسماً للمتألمين وأسعد الفقراء وأسد احتياجاتهم.", weights: [0, 0, 0, 3] },
+                    { text: "أكون قدوة في الشجاعة والبطولة والثبات حتى النهاية.", weights: [0, 0, 3, 1] }
+                ]
+            },
+            {
+                title: "8. كيف تعبر بشكل أساسي عن حبك لله وللناس؟",
+                options: [
+                    { text: "بالصلاة الدائمة والجهاد الروحي الخاص والتأمل.", weights: [0, 3, 0, 0] },
+                    { text: "بالعطاء المادي والخدمة العملية والنظافة والتمريض.", weights: [0, 0, 0, 3] },
+                    { text: "بالتضحية بالوقت والجهد وحتى بالذات لحماية الآخرين.", weights: [0, 0, 3, 1] },
+                    { text: "بنشر كلمة الإنجيل وبناء المدارس والمؤسسات النافعة.", weights: [3, 0, 0, 1] }
+                ]
+            },
+            {
+                title: "9. عند المرور بتجربة مرض أو ألم جسدي أو نفسي، كيف تبصر الأزمة؟",
+                options: [
+                    { text: "فرصة للتأمل وشركة حب في الآلام مع الله دون تذمر.", weights: [0, 3, 0, 0] },
+                    { text: "اختبار لصلابة إيماني وثباتي ومناسبة للشهادة للحق.", weights: [0, 0, 3, 0] },
+                    { text: "دافع إضافي للإحساس بآلام الآخرين وخدمتهم بقدر استطاعتي.", weights: [0, 0, 0, 3] },
+                    { text: "درس نتعلم منه الحكمة وتعميق الفهم الإنساني والروحي.", weights: [3, 0, 0, 0] }
+                ]
+            },
+            {
+                title: "10. ما هي الصفة التي يراها أصدقاؤك والمقربون فيك دائماً؟",
+                options: [
+                    { text: "الحكمة والعمق الفكري والقدرة على الشرح والتأثير.", weights: [3, 0, 0, 0] },
+                    { text: "الوداعة والبساطة والقلب المتسامح الكبير.", weights: [0, 3, 0, 1] },
+                    { text: "الجرأة والشهامة والشخصية القيادية القوية.", weights: [0, 0, 3, 0] },
+                    { text: "السخاء والكرم وحب الخدمة دون مقابل.", weights: [0, 0, 0, 3] }
+                ]
+            },
+            {
+                title: "11. إذا طُلب منك بدء مشروع جديد، أي نوع من المشاريع تفضل؟",
+                options: [
+                    { text: "مشروع تعليمي/ثقافي لبناء عقول أجيال المستقبل.", weights: [3, 0, 0, 1] },
+                    { text: "مؤسسة خيرية أو مستشفى لمساعدة المكروبين والفقراء.", weights: [0, 0, 1, 3] },
+                    { text: "مبادرة لحفظ الحقوق والتصدي للظلم والتحديات.", weights: [1, 0, 3, 0] },
+                    { text: "مركز روحي للهرب من الضوضاء والتأمل العميق.", weights: [0, 3, 0, 0] }
+                ]
+            },
+            {
+                title: "12. ما هو الشعار الذي تراه يمثل فلسفتك في الحياة؟",
+                options: [
+                    { text: "«أنا ضد العالم» (الثبات والتمسك بالإيمان والمبدأ).", weights: [1, 0, 3, 0] },
+                    { text: "«صليت فاستُجيب لي» (قوة الصلاة والصلة العميقة بالله).", weights: [0, 3, 0, 0] },
+                    { text: "«طوبى للذي ينظر إلى المسكين» (المحبة والرحمة والعطاء).", weights: [0, 0, 0, 3] },
+                    { text: "«تعرفون الحق والحق يحرركم» (العلم والحكمة والنور).", weights: [3, 0, 0, 0] }
+                ]
+            }
+        ];
+
+        let activeCategory = 'all';
+        let currentQuestionIndex = 0;
+        let userAnswers = new Array(12).fill(null);
+
+        // دالة عرض الكروت
+        function renderCards(data) {
+            const grid = document.getElementById('cardsGrid');
+            grid.innerHTML = '';
+
+            if (data.length === 0) {
+                grid.innerHTML = '<div class="no-results"><i class="fa-solid fa-face-frown mb-3" style="font-size:2rem;"></i><br>لم نجد أي شخصية تطابق بحثك. جرب البحث باسم آخر.</div>';
+                return;
+            }
+
+            data.forEach(saint => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.onclick = () => openModal(saint.id);
+
+                card.innerHTML = `
+                    <div>
+                        <div class="card-badge">${saint.chapter.split('-')[0]}</div>
+                        <h3 class="card-title">${saint.name}</h3>
+                        <div class="card-subtitle">${saint.title}</div>
+                        <p class="card-snippet">${saint.bio}</p>
+                    </div>
+                    <div class="card-footer">
+                        <span>قراءة التفاصيل الكاملة</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // دالة تصفية البحث اللحظي
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.trim().toLowerCase();
+            filterData(searchTerm, activeCategory);
+        });
+
+        // دالة تصفية الأبواب
+        function filterCategory(category) {
+            activeCategory = category;
+            
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
+            filterData(searchTerm, activeCategory);
+        }
+
+        function filterData(searchTerm, category) {
+            let filtered = saintsData;
+
+            if (category !== 'all') {
+                filtered = filtered.filter(item => item.chapter.includes(category));
+            }
+
+            if (searchTerm !== '') {
+                filtered = filtered.filter(item => 
+                    item.name.toLowerCase().includes(searchTerm) ||
+                    item.title.toLowerCase().includes(searchTerm) ||
+                    item.bio.toLowerCase().includes(searchTerm) ||
+                    item.cross.toLowerCase().includes(searchTerm) ||
+                    item.impact.toLowerCase().includes(searchTerm)
+                );
+            }
+
+            renderCards(filtered);
+        }
+
+        // فتح نافذة التفاصيل
+        function openModal(id) {
+            const saint = saintsData.find(item => item.id === id);
+            if (!saint) return;
+
+            document.getElementById('modalChapter').innerText = saint.chapter;
+            document.getElementById('modalTitle').innerText = `${saint.name} (${saint.title})`;
+            document.getElementById('modalBio').innerText = saint.bio;
+            document.getElementById('modalCross').innerText = saint.cross;
+            document.getElementById('modalImpact').innerText = saint.impact;
+            document.getElementById('modalQuote').innerText = saint.quote;
+
+            document.getElementById('modalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // ================= منطق كويز / اختبار القديسين =================
+        function openQuizModal() {
+            resetQuiz();
+            document.getElementById('quizModalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeQuizModal() {
+            document.getElementById('quizModalOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function resetQuiz() {
+            currentQuestionIndex = 0;
+            userAnswers = new Array(12).fill(null);
+            document.getElementById('quizBody').style.display = 'block';
+            document.getElementById('quizResultBody').style.display = 'none';
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = quizQuestions[currentQuestionIndex];
+            
+            document.getElementById('quizProgressText').innerText = `السؤال ${currentQuestionIndex + 1} من 12`;
+            const progressPercent = ((currentQuestionIndex + 1) / 12) * 100;
+            document.getElementById('quizProgressFill').style.width = `${progressPercent}%`;
+
+            document.getElementById('quizQuestionTitle').innerText = q.title;
+
+            const container = document.getElementById('quizOptionsContainer');
+            container.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('div');
+                btn.className = 'quiz-option-btn';
+                if (userAnswers[currentQuestionIndex] === idx) {
+                    btn.classList.add('selected');
+                }
+                btn.innerHTML = `
+                    <span>${opt.text}</span>
+                    <i class="fa-regular ${userAnswers[currentQuestionIndex] === idx ? 'fa-circle-check' : 'fa-circle'}"></i>
+                `;
+                btn.onclick = () => selectOption(idx);
+                container.appendChild(btn);
+            });
+
+            document.getElementById('quizPrevBtn').disabled = currentQuestionIndex === 0;
+            document.getElementById('quizNextBtn').disabled = userAnswers[currentQuestionIndex] === null;
+            
+            if (currentQuestionIndex === 11) {
+                document.getElementById('quizNextBtn').innerHTML = 'عرض النتيجة <i class="fa-solid fa-flag-checkered"></i>';
+            } else {
+                document.getElementById('quizNextBtn').innerHTML = 'التالي <i class="fa-solid fa-chevron-left"></i>';
+            }
+        }
+
+        function selectOption(index) {
+            userAnswers[currentQuestionIndex] = index;
+            renderQuestion();
+        }
+
+        function nextQuestion() {
+            if (userAnswers[currentQuestionIndex] === null) return;
+
+            if (currentQuestionIndex < 11) {
+                currentQuestionIndex++;
+                renderQuestion();
+            } else {
+                calculateAndShowResult();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                renderQuestion();
+            }
+        }
+
+        // الخوارزمية الرياضية لحساب أكثر القديسين تطابقاً من بين الـ 37 شخصية
+        function calculateAndShowResult() {
+            let userVector = [0, 0, 0, 0]; // [wisdom, asceticism, courage, service]
+
+            userAnswers.forEach((ansIdx, qIdx) => {
+                if (ansIdx !== null) {
+                    const weights = quizQuestions[qIdx].options[ansIdx].weights;
+                    for (let i = 0; i < 4; i++) {
+                        userVector[i] += weights[i];
+                    }
+                }
+            });
+
+            const totalUserScore = userVector.reduce((a, b) => a + b, 0) || 1;
+            const normUser = userVector.map(v => (v / totalUserScore) * 10);
+
+            let bestMatch = null;
+            let minDistance = Infinity;
+
+            saintsData.forEach(saint => {
+                const sVector = saint.traits;
+                const totalSaintScore = sVector.reduce((a, b) => a + b, 0) || 1;
+                const normSaint = sVector.map(v => (v / totalSaintScore) * 10);
+
+                // حساب المسافة الإقليدية (Euclidean distance) بين التوجه الروحي للمستخدم وكل قديس
+                let distance = 0;
+                for (let i = 0; i < 4; i++) {
+                    distance += Math.pow(normUser[i] - normSaint[i], 2);
+                }
+                distance = Math.sqrt(distance);
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    bestMatch = saint;
+                }
+            });
+
+            // عرض النتيجة
+            document.getElementById('quizBody').style.display = 'none';
+            document.getElementById('quizResultBody').style.display = 'block';
+
+            document.getElementById('resSaintName').innerText = bestMatch.name;
+            document.getElementById('resSaintTitle').innerText = bestMatch.title;
+            
+            document.getElementById('resSaintDesc').innerHTML = `
+                <strong style="color: var(--accent-gold-light); display:block; margin-bottom:8px;">لماذا تظهر لك هذه النتيجة؟</strong>
+                إجاباتك في الـ 12 سؤالاً تعكس توجهاً روحياً وإنسانياً مشابهاً لسيرة <strong>${bestMatch.name}</strong>. 
+                أنت تمتلك روحاً تجمع بين <em>${bestMatch.chapter.split('-')[1] || bestMatch.chapter}</em> وتتميز بحمل الصليب بثبات وخدمة المحيطين بك بحب ونقاء.
+            `;
+
+            document.getElementById('resViewBioBtn').onclick = () => {
+                closeQuizModal();
+                openModal(bestMatch.id);
+            };
+        }
+
+        // إغلاق عند الضغط خارج النافذة
+        document.getElementById('modalOverlay').addEventListener('click', (e) => {
+            if (e.target.id === 'modalOverlay') closeModal();
+        });
+
+        document.getElementById('quizModalOverlay').addEventListener('click', (e) => {
+            if (e.target.id === 'quizModalOverlay') closeQuizModal();
+        });
+
+        // العرض الأولي لكل الشخصيات عند تحميل الصفحة
+        renderCards(saintsData);
+    </script>
+</body>
+</html>
